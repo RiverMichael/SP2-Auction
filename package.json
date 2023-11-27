@@ -6,7 +6,8 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
-    "start": "npm run watch"
+    "start": "npm run watch",
+    "format": "prettier -w src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "live-server": "^1.2.2",
+    "prettier": "^3.1.0",
     "sass": "^1.69.5"
   }
 }
