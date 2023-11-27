@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/RiverMichael/SP2-Auction/issues"
   },
-  "homepage": "https://github.com/RiverMichael/SP2-Auction#readme"
+  "homepage": "https://github.com/RiverMichael/SP2-Auction#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
 }
