@@ -26,5 +26,8 @@
   "homepage": "https://github.com/RiverMichael/SP2-Auction#readme",
   "dependencies": {
     "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
   }
 }
