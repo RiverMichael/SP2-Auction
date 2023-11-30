@@ -56,7 +56,10 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div
+            class="collapse navbar-collapse mb-3 mb-md-0"
+            id="navbarCollapse"
+          >
             <div
               class="navbar-nav align-items-center text-center fw-bold ms-auto p-2 mt-3 mt-md-0"
             >
@@ -68,7 +71,7 @@
               >
               <a
                 href="/addlisting/"
-                class="nav-item btn btn-outline-dark border-2 rounded-1 text-uppercase fs-5 d-none"
+                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase fs-5 mt-3 mt-md-0 ms-md-2 d-none"
                 id="add-listing-button"
                 >add listing</a
               >
@@ -82,14 +85,17 @@
                   class="nav-item nav-link text-uppercase fs-5"
                   >my profile</a
                 >
-                <button class="nav-item text-uppercase fs-5" id="button-login">
+                <button
+                  class="nav-item nav-link text-uppercase fs-5"
+                  id="button-login"
+                >
                   log out
                 </button>
               </div>
             </div>
 
             <div
-              class="d-flex align-items-center justify-content-center gap-3 ms-auto"
+              class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-md-0 ms-auto"
               id="not-logged-in"
             >
               <button
@@ -138,13 +144,41 @@
       </nav>
     </header>
 
-    <main></main>
+    <main>
+      <section class="py-2 py-sm-3 py-md-5" id="intro">
+        <div class="container-fluid">
+          <div class="row p-5 d-flex align-items-center justify-content-center">
+            <form
+              role="search"
+              class="col col-sm-8 col-md-6 col-xxl-4"
+              id="searchForm"
+            >
+              <div class="input-group mb-3 shadow-sm">
+                <span class="input-group-text border-end-0" id="search-addon">
+                  <i class="bi bi-search"></i>
+                </span>
+                <input
+                  type="search"
+                  name="searchHomePage"
+                  class="form-control border-start-0"
+                  id="searchHomePage"
+                  searchListings
+                  placeholder="Search listings"
+                  aria-label="search listings"
+                  aria-describedby="search-addon"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer
       class="mt-auto bg-black d-flex flex-column align-items-center justify-content-center"
     >
       <div
-        class="container-fluid row flex-column gap-4 flex-md-row mt-3 flex-column-reverse"
+        class="container-fluid row flex-column gap-4 flex-md-row my-3 flex-column-reverse"
       >
         <div
           class="col d-flex gap-3 justify-content-center justify-content-md-start align-items-center"
@@ -198,25 +232,17 @@
           class="col fw-bold d-flex gap-3 text-uppercase fw-bold justify-content-center justify-content-md-end align-items-center"
         >
           <a href="#" class="link-primary link-underline-opacity-0">home</a>
-          <a
-            href="/about/"
-            class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
-            >about</a
-          >
-          <a
-            href="/contact/"
-            class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
-            >contact</a
-          >
+          <a href="/about/" class="link-light link-offset-2">about</a>
+          <a href="/contact/" class="link-light link-offset-2">contact</a>
         </div>
       </div>
 
-      <div class="mt-3 text-center text-white fw-lighter">
+      <div class="mb-2 text-center text-white fw-lighter">
         Copyright &copy 2023
         <a
           href="https://www.michaelriver.dev"
           target="_blank"
-          class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-50-hover text-capitalize"
+          class="link-light link-offset-2 link-underline-opacity-50 text-capitalize"
           >michael river nilsson</a
         >
       </div>
