@@ -1,16 +1,26 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+// Header
 .logo {
   max-width: 200px;
 }
 
-.logo-footer {
-  max-width: 150px;
-}
-
 #header-profile i {
   font-size: 30px;
+}
+
+#intro {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/images/gavel.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Footer
+.logo-footer {
+  max-width: 150px;
 }
 
 .icon-social {
