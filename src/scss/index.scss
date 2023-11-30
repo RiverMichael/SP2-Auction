@@ -1,0 +1,51 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Header
+.logo {
+  max-width: 200px;
+}
+
+#header-profile i {
+  font-size: 30px;
+}
+
+#intro {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/images/gavel.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Footer
+.logo-footer {
+  max-width: 150px;
+}
+
+.icon-social {
+  outline: 3px solid transparent;
+  transition-property: outline-offset, outline-color;
+  transition-duration: 0.25s;
+}
+
+.icon-social:hover {
+  outline-color: #ea804f;
+  outline-offset: 3px;
+  animation: shake 0.25s;
+}
+
+@keyframes shake {
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+}
