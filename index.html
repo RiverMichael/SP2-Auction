@@ -31,6 +31,8 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="src/js/pages/main.js" defer></script>
   </head>
   <body class="min-vh-100 d-flex flex-column bg-white text-black">
     <header class="sticky-top p-2 bg-white">
@@ -170,6 +172,74 @@
               </div>
             </form>
           </div>
+        </div>
+      </section>
+
+      <section class="container my-5 border-bottom border-secondary border-5">
+        <div class="row border-bottom border-secondary border-5 mb-5">
+          <h1 class="text-secondary mb-0">Active listings</h1>
+        </div>
+
+        <section
+          class="row row-gap-2 justify-content-center"
+          id="displaySearch"
+        ></section>
+
+        <div class="d-flex flex-column gap-5" id="activeListings">
+          <section
+            class="row border-bottom border-secondary pb-5 gap-3 justify-content-center"
+          >
+            <div
+              class="d-flex flex-column flex-sm-row gap-sm-1 align-items-sm-center"
+            >
+              <h2 class="mb-0">Ending soon</h2>
+              <a href="/listings/" class="link-secondary link-offset-2"
+                >(See all listings)</a
+              >
+            </div>
+
+            <div
+              class="row row-gap-4 justify-content-center"
+              id="listingsEnding"
+            >
+              <span class="loader my-3"></span>
+            </div>
+          </section>
+
+          <section
+            class="row border-bottom border-secondary pb-5 gap-3 justify-content-center"
+          >
+            <div
+              class="d-flex flex-column flex-sm-row gap-sm-1 align-items-sm-center"
+            >
+              <h2 class="mb-0">Most popular</h2>
+              <a href="/listings/" class="link-secondary link-offset-2"
+                >(See all listings)</a
+              >
+            </div>
+
+            <div
+              class="row row-gap-2 justify-content-center"
+              id="listingsPopular"
+            >
+              <span class="loader my-3"></span>
+            </div>
+          </section>
+
+          <section class="row pb-5 gap-3 justify-content-center">
+            <div
+              class="d-flex flex-column flex-sm-row gap-sm-1 align-items-sm-center"
+            >
+              <h2 class="mb-0">Newest listings</h2>
+              <a href="/listings/" class="link-secondary link-offset-2"
+                >(See all listings)</a
+              >
+            </div>
+
+            <div class="row row-gap-2 justify-content-center" id="listingsNew">
+              <span class="loader my-3"></span>
+            </div>
+          </section>
         </div>
       </section>
     </main>
