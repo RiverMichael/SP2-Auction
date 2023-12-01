@@ -1,4 +1,4 @@
-import { getFromStorage } from "../utils/getFromStorage.mjs";
+import { getFromStorage } from "../utils/getFromStorage.js";
 
 const token = getFromStorage("accessToken");
 
@@ -15,14 +15,6 @@ export const getData = () => {
     headers: headers,
   };
 };
-
-// export const getData = {
-//   method: "GET",
-//   headers: {
-//     "Content-Type": "application/json",
-//     Authorization: `Bearer ${token}`,
-//   },
-// };
 
 export const deleteData = {
   method: "DELETE",
