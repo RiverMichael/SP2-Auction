@@ -3,7 +3,11 @@ import { getListings } from "../utils/getListings.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 
-export async function displayNewListings() {
+/**
+ * Displays the newest listings.
+ * @param {Number} numberOfListings - The number of listings to display. Defaults to 4.
+ */
+export async function displayNewListings(numberOfListings = 4) {
   const listingsNewContainer = document.querySelector("#listingsNew");
 
   try {
@@ -15,7 +19,7 @@ export async function displayNewListings() {
         const bTime = new Date(b.created).getTime();
         return aTime - bTime;
       })
-      .slice(0, 4);
+      .slice(0, numberOfListings);
 
     clearHTML(listingsNewContainer);
     renderListings(listingsByNew, listingsNewContainer);
