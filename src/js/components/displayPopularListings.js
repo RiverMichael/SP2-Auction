@@ -3,7 +3,11 @@ import { getListings } from "../utils/getListings.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 
-export async function displayPopularListings() {
+/**
+ * Displays the listings with most bids.
+ * @param {Number} numberOfListings - The number of listings to display. Defaults to 4.
+ */
+export async function displayPopularListings(numberOfListings = 4) {
   const listingsPopularContainer = document.querySelector("#listingsPopular");
 
   try {
@@ -15,7 +19,7 @@ export async function displayPopularListings() {
         const bBids = b.bids.length;
         return bBids - aBids;
       })
-      .slice(0, 4);
+      .slice(0, numberOfListings);
 
     clearHTML(listingsPopularContainer);
     renderListings(listingsByPopular, listingsPopularContainer);

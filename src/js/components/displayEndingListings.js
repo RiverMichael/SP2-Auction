@@ -3,7 +3,11 @@ import { getListings } from "../utils/getListings.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 
-export async function displayEndingListings() {
+/**
+ * Displays the listings that are ending soon.
+ * @param {Number} numberOfListings - The number of listings to display. Defaults to 4.
+ */
+export async function displayEndingListings(numberOfListings = 4) {
   const listingsEndingContainer = document.querySelector("#listingsEnding");
 
   try {
@@ -15,7 +19,9 @@ export async function displayEndingListings() {
         const bTime = new Date(b.endsAt).getTime();
         return aTime - bTime;
       })
-      .slice(0, 4);
+      .slice(0, numberOfListings);
+
+    console.log(listingsByEnding);
 
     clearHTML(listingsEndingContainer);
     renderListings(listingsByEnding, listingsEndingContainer);

@@ -11,6 +11,7 @@
  *
  * const parentElement = document.querySelector(".#listings");
  * createListingCardHTML(listing, parentElement);
+ * ```
  */
 export function createListingCardHTML(listing, parentElement) {
   const cardContainer = document.createElement("div");
