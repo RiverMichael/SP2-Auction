@@ -65,15 +65,15 @@
             <div
               class="navbar-nav align-items-center text-center fw-bold ms-auto p-2 mt-3 mt-md-0"
             >
-              <a href="#" class="nav-item nav-link text-uppercase fs-5 active"
+              <a href="#" class="nav-item nav-link text-uppercase active"
                 >home</a
               >
-              <a href="/listings/" class="nav-item nav-link text-uppercase fs-5"
+              <a href="/listings/" class="nav-item nav-link text-uppercase"
                 >listings</a
               >
               <a
                 href="/addlisting/"
-                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase fs-5 mt-3 mt-md-0 ms-md-2 d-none"
+                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase mt-3 mt-md-0 ms-md-2 d-none"
                 id="add-listing-button"
                 >add listing</a
               >
@@ -82,15 +82,10 @@
                 class="d-flex flex-column align-items-center d-none"
                 id="nav-profile"
               >
-                <a
-                  href="/profile/"
-                  class="nav-item nav-link text-uppercase fs-5"
+                <a href="/profile/" class="nav-item nav-link text-uppercase"
                   >my profile</a
                 >
-                <button
-                  class="nav-item nav-link text-uppercase fs-5"
-                  id="button-login"
-                >
+                <button class="nav-item nav-link text-uppercase button-logout">
                   log out
                 </button>
               </div>
@@ -100,17 +95,19 @@
               class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-md-0 ms-auto"
               id="not-logged-in"
             >
-              <button
-                class="nav-item btn btn-sm btn-outline-dark rounded-1 fs-5 text-uppercase"
+              <a
+                href="/auth/login.html"
+                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase"
               >
                 login
-              </button>
-              <button
-                class="nav-item btn btn-sm btn-primary rounded-1 text-uppercase fs-5"
-                id="button-register"
+              </a>
+
+              <a
+                href="/auth/register.html"
+                class="nav-item btn btn-sm btn-primary rounded-1 text-uppercase"
               >
                 register
-              </button>
+              </a>
             </div>
 
             <div
@@ -135,7 +132,10 @@
                   >
                 </li>
                 <li>
-                  <button class="dropdown-item text-uppercase" type="button">
+                  <button
+                    class="dropdown-item text-uppercase button-logout"
+                    type="button"
+                  >
                     log out
                   </button>
                 </li>

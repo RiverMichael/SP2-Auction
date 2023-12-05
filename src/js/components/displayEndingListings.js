@@ -21,8 +21,6 @@ export async function displayEndingListings(numberOfListings = 4) {
       })
       .slice(0, numberOfListings);
 
-    console.log(listingsByEnding);
-
     clearHTML(listingsEndingContainer);
     renderListings(listingsByEnding, listingsEndingContainer);
   } catch (error) {
