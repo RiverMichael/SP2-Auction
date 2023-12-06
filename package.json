@@ -1,6 +1,6 @@
 {
   "name": "auctionhub",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "An auction site for my semester project 2 at Noroff",
   "main": "index.js",
   "scripts": {
