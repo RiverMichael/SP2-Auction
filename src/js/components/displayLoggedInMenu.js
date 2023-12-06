@@ -22,8 +22,6 @@ export async function displayLoggedInMenu() {
       headerProfile.classList.remove("d-none");
       addListingButton.classList.remove("d-none");
       profileMenu.classList.remove("d-none");
-
-      console.log("profileDetails", profileDetails);
     } else {
       loginRegisterButton.classList.remove("d-none");
       headerProfile.classList.add("d-none");

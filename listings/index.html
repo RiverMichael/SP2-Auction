@@ -3,11 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Find your next new cool thing at AuctionHub"
-    />
-    <title>Home | AuctionHub</title>
+    <meta name="description" content="View all listings on AuctionHub" />
+
+    <title>All listings | AuctionHub</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +21,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
 
-    <link rel="icon" type="image/x-icon" href="images/logo/ah_logo-dark.png" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../images/logo/ah_logo-dark.png"
+    />
     <link rel="icon" href="data:;base64,=" />
 
     <script
@@ -32,16 +34,16 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="module" src="src/js/pages/main.js" defer></script>
-    <script type="module" src="./src/js/common.js" defer></script>
+    <script type="module" src="../src/js/pages/listings.js" defer></script>
+    <script type="module" src="../src/js/common.js" defer></script>
   </head>
   <body class="min-vh-100 d-flex flex-column bg-white text-black">
     <header class="sticky-top p-2 bg-white">
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
-          <a href="#" class="navbar-brand">
+          <a href="/" class="navbar-brand">
             <img
-              src="images/logo/ah_logo-dark.png"
+              src="../images/logo/ah_logo-dark.png"
               alt="AuctionHub logotype"
               class="logo"
             />
@@ -66,10 +68,8 @@
             <div
               class="navbar-nav align-items-center text-center fw-bold ms-auto p-2 mt-3 mt-md-0"
             >
+              <a href="/" class="nav-item nav-link text-uppercase">home</a>
               <a href="#" class="nav-item nav-link text-uppercase active"
-                >home</a
-              >
-              <a href="/listings/" class="nav-item nav-link text-uppercase"
                 >listings</a
               >
               <a
@@ -155,9 +155,9 @@
     </header>
 
     <main>
-      <section class="py-2 py-sm-3 py-md-5" id="intro">
-        <div class="container-fluid">
-          <div class="row p-5 d-flex align-items-center justify-content-center">
+      <section class="py-2 py-sm-3 py-md-5" id="search">
+        <div class="container d-flex flex-column gap-2 justify-content-center">
+          <div class="row d-flex align-items-center justify-content-center">
             <form
               role="search"
               class="col col-sm-8 col-md-6 col-xxl-4"
@@ -180,6 +180,59 @@
               </div>
             </form>
           </div>
+
+          <div class="row d-flex align-items-center justify-content-center">
+            <form class="col" id="sortForm">
+              <fieldset class="row align-items-center justify-content-center">
+                <legend class="col-auto label">Sort by:</legend>
+                <div class="col-auto">
+                  <div class="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="sortRadios"
+                      id="sortRadios1"
+                      value="new"
+                      checked
+                    />
+                    <label for="sortRadios1" class="form-check-label"
+                      >Newest</label
+                    >
+                  </div>
+                </div>
+
+                <div class="col-auto">
+                  <div class="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="sortRadios"
+                      id="sortRadios2"
+                      value="ending"
+                    />
+                    <label for="sortRadios2" class="form-check-label"
+                      >Ending soon</label
+                    >
+                  </div>
+                </div>
+
+                <div class="col-auto">
+                  <div class="form-check form-check-inline">
+                    <input
+                      type="radio"
+                      class="form-check-input"
+                      name="sortRadios"
+                      id="sortRadios3"
+                      value="popular"
+                    />
+                    <label for="sortRadios3" class="form-check-label"
+                      >Most popular</label
+                    >
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
         </div>
       </section>
 
@@ -192,66 +245,15 @@
           ></div>
         </section>
 
-        <div class="row border-bottom border-secondary border-5 mb-5">
-          <h1 class="text-secondary mb-0">Active listings</h1>
-        </div>
+        <section class="d-flex flex-column pb-5 gap-3 justify-content-center">
+          <div class="row border-bottom border-secondary border-5 mb-5">
+            <h1 class="text-secondary mb-0">All listings</h1>
+          </div>
 
-        <div class="d-flex flex-column gap-5" id="activeListings">
-          <section
-            class="row border-bottom border-secondary pb-5 gap-3 justify-content-center"
-          >
-            <div
-              class="d-flex flex-column flex-sm-row gap-sm-1 align-items-sm-center"
-            >
-              <h2 class="mb-0">Ending soon</h2>
-              <a href="/listings/" class="link-secondary link-offset-2"
-                >(See all listings)</a
-              >
-            </div>
-
-            <div
-              class="row row-gap-4 justify-content-center"
-              id="listingsEnding"
-            >
-              <span class="loader my-3"></span>
-            </div>
-          </section>
-
-          <section
-            class="row border-bottom border-secondary pb-5 gap-3 justify-content-center"
-          >
-            <div
-              class="d-flex flex-column flex-sm-row gap-sm-1 align-items-sm-center"
-            >
-              <h2 class="mb-0">Most popular</h2>
-              <a href="/listings/" class="link-secondary link-offset-2"
-                >(See all listings)</a
-              >
-            </div>
-
-            <div
-              class="row row-gap-2 justify-content-center"
-              id="listingsPopular"
-            >
-              <span class="loader my-3"></span>
-            </div>
-          </section>
-
-          <section class="row pb-5 gap-3 justify-content-center">
-            <div
-              class="d-flex flex-column flex-sm-row gap-sm-1 align-items-sm-center"
-            >
-              <h2 class="mb-0">Newest listings</h2>
-              <a href="/listings/" class="link-secondary link-offset-2"
-                >(See all listings)</a
-              >
-            </div>
-
-            <div class="row row-gap-2 justify-content-center" id="listingsNew">
-              <span class="loader my-3"></span>
-            </div>
-          </section>
-        </div>
+          <div class="row row-gap-4 justify-content-center" id="allListings">
+            <span class="loader my-3"></span>
+          </div>
+        </section>
       </section>
     </main>
 
@@ -270,7 +272,7 @@
             aria-label="visit our X page"
           >
             <img
-              src="images/icons/X.svg"
+              src="../images/icons/X.svg"
               alt="logotype of X"
               class="icon-social rounded"
             />
@@ -281,7 +283,7 @@
             aria-label="visit our Instagram page"
           >
             <img
-              src="images/icons/Instagram.svg"
+              src="../images/icons/Instagram.svg"
               alt="logotype of Instagram"
               class="icon-social rounded"
             />
@@ -292,7 +294,7 @@
             aria-label="visit our Facebook page"
           >
             <img
-              src="images/icons/Facebook.svg"
+              src="../images/icons/Facebook.svg"
               alt="logotype of Facebook"
               class="icon-social rounded"
             />
@@ -300,9 +302,9 @@
         </div>
 
         <div class="col-auto d-none d-md-block">
-          <a href="#" aria-label="Go to the top of the page">
+          <a href="/" aria-label="Go to the top of the page">
             <img
-              src="images/logo/ah_logo-light.png"
+              src="../images/logo/ah_logo-light.png"
               alt="AuctionHub logotype"
               class="logo-footer"
             />
@@ -312,7 +314,7 @@
         <div
           class="col fw-bold d-flex gap-3 text-uppercase fw-bold justify-content-center justify-content-md-end align-items-center"
         >
-          <a href="#" class="link-primary link-underline-opacity-0">home</a>
+          <a href="/" class="link-light link-underline-opacity-0">home</a>
           <a href="/about/" class="link-light link-offset-2">about</a>
           <a href="/contact/" class="link-light link-offset-2">contact</a>
         </div>
