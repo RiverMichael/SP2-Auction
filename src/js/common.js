@@ -1,15 +1,13 @@
 import { bootstrapFormValidation } from "./components/bootstrapFormValidation.js";
 
 function common() {
-  try {
-    const cancelButton = document.querySelector(".cancelButton");
+  const cancelButton = document.querySelector(".cancelButton");
+  if (cancelButton) {
     cancelButton.addEventListener("click", function () {
       history.back();
     });
-
-    bootstrapFormValidation();
-  } catch (error) {
-    console.error(error);
   }
+
+  bootstrapFormValidation();
 }
 common();

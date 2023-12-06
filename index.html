@@ -33,6 +33,7 @@
     ></script>
 
     <script type="module" src="src/js/pages/main.js" defer></script>
+    <script type="module" src="./src/js/common.js"></script>
   </head>
   <body class="min-vh-100 d-flex flex-column bg-white text-black">
     <header class="sticky-top p-2 bg-white">
@@ -73,13 +74,13 @@
               >
               <a
                 href="/addlisting/"
-                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase mt-3 mt-md-0 ms-md-2 d-none"
+                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase mt-2 mt-md-0 ms-md-2 d-none"
                 id="add-listing-button"
                 >add listing</a
               >
 
               <div
-                class="d-flex flex-column align-items-center d-none"
+                class="d-flex flex-column align-items-center mt-2 d-none d-md-none"
                 id="nav-profile"
               >
                 <a href="/profile/" class="nav-item nav-link text-uppercase"
@@ -110,36 +111,43 @@
               </a>
             </div>
 
-            <div
-              class="nav-item dropdown ms-auto d-none"
-              id="header-profile-button"
-            >
-              <button
-                class="btn nav-link dropdown-toggle d-flex align-items-center"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                aria-label="profile menu"
+            <div class="ms-auto d-flex gap-3 d-none" id="header-profile">
+              <div
+                class="d-none d-md-flex gap-1 align-items-center"
+                id="headerCredits"
               >
-                <i class="bi bi-person-circle"></i>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a
-                    href="/profile/"
-                    class="dropdown-item text-uppercase fw-bold"
-                    >my profile</a
-                  >
-                </li>
-                <li>
-                  <button
-                    class="dropdown-item text-uppercase button-logout"
-                    type="button"
-                  >
-                    log out
-                  </button>
-                </li>
-              </ul>
+                <span id="creditsHeaderContainer">0</span>
+                <p class="m-0">credits</p>
+              </div>
+              <div
+                class="nav-item dropdown d-none d-md-block"
+                id="header-profile-button"
+              >
+                <button
+                  class="btn nav-link dropdown-toggle d-flex align-items-center"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-label="profile menu"
+                >
+                  <i class="bi bi-person-circle"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a href="/profile/" class="dropdown-item text-uppercase"
+                      >my profile</a
+                    >
+                  </li>
+                  <li>
+                    <button
+                      class="dropdown-item text-uppercase button-logout"
+                      type="button"
+                    >
+                      log out
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
