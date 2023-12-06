@@ -1,4 +1,5 @@
 import { bootstrapFormValidation } from "./components/bootstrapFormValidation.js";
+import { handleLogOutUser } from "./utils/handleLogOutUser.js";
 
 function common() {
   const cancelButton = document.querySelector(".cancelButton");
@@ -9,5 +10,6 @@ function common() {
   }
 
   bootstrapFormValidation();
+  handleLogOutUser();
 }
 common();
