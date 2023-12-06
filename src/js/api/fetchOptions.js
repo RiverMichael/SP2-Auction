@@ -2,18 +2,12 @@ import { getFromStorage } from "../utils/getFromStorage.js";
 
 const token = getFromStorage("accessToken");
 
-export const getData = () => {
-  let headers = {
+export const getData = {
+  method: "GET",
+  headers: {
     "Content-Type": "application/json",
-  };
-  if (token) {
-    headers.Authorization = `Bearer ${token}`;
-  }
-
-  return {
-    method: "GET",
-    headers: headers,
-  };
+    Authorization: `Bearer ${token}`,
+  },
 };
 
 export const deleteData = {

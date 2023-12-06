@@ -13,7 +13,7 @@ export async function displayPopularListings(numberOfListings = 4) {
   try {
     const allListings = await getListings();
     const arrayToSort = [...allListings];
-    const listingsByPopular = arrayToSort
+    const listingsByNumberOfBids = arrayToSort
       .sort((a, b) => {
         const aBids = a.bids.length;
         const bBids = b.bids.length;
@@ -22,7 +22,7 @@ export async function displayPopularListings(numberOfListings = 4) {
       .slice(0, numberOfListings);
 
     clearHTML(listingsPopularContainer);
-    renderListings(listingsByPopular, listingsPopularContainer);
+    renderListings(listingsByNumberOfBids, listingsPopularContainer);
   } catch (error) {
     console.log(error);
     clearHTML(listingsPopularContainer);
