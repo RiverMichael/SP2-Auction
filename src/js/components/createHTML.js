@@ -45,7 +45,12 @@ export function createListingCardHTML(listing, parentElement) {
 
   const cardTitle = document.createElement("h3");
   cardTitle.classList.add("card-title");
-  cardTitle.innerText = listing.title;
+  if (listing.title.length > 20) {
+    cardTitle.innerText = listing.title.slice(0, 20) + "...";
+  } else {
+    cardTitle.innerText = listing.title;
+  }
+
   cardBody.append(cardTitle);
 
   const currentBid = document.createElement("p");

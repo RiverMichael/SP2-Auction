@@ -1,5 +1,5 @@
 import { renderListings } from "../components/render.js";
-import { getNewListings } from "../utils/getNewListings.js";
+import { getListings } from "../utils/getListings.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 
@@ -10,7 +10,7 @@ export async function displayNewListings() {
   const listingsNewContainer = document.querySelector("#listingsNew");
 
   try {
-    const listings = await getNewListings(4);
+    const listings = await getListings(4);
 
     clearHTML(listingsNewContainer);
     renderListings(listings, listingsNewContainer);
