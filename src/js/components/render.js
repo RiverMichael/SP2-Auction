@@ -1,4 +1,7 @@
-import { createListingCardHTML } from "./createHTML.js";
+import {
+  createListingCardHTML,
+  createListingDetailsHTML,
+} from "./createHTML.js";
 
 /**
  * Renders an array of listings by creating HTML for each listing and appends it to a parent element.
@@ -9,4 +12,8 @@ export function renderListings(listings, parentElement) {
   listings.forEach((listing) => {
     createListingCardHTML(listing, parentElement);
   });
+}
+
+export function renderListingDetails(listing, parentElement) {
+  createListingDetailsHTML(listing, parentElement);
 }

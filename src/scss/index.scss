@@ -25,6 +25,23 @@
   object-fit: cover;
 }
 
+#link-goBack,
+#bidsLink {
+  cursor: pointer;
+}
+
+.details-image {
+  object-position: center;
+  object-fit: cover;
+}
+
+.thumbnail-image {
+  width: 50px;
+  height: 50px;
+  object-position: center;
+  object-fit: cover;
+}
+
 // Footer
 .logo-footer {
   max-width: 150px;
