@@ -117,6 +117,7 @@ export function createListingDetailsHTML(listing, parentElement) {
 
   // left column
   const imagesContainer = document.createElement("div");
+  imagesContainer.id = "imagesContainer";
   imagesContainer.classList.add(
     "col-12",
     "col-md",
@@ -134,8 +135,10 @@ export function createListingDetailsHTML(listing, parentElement) {
     "border-secondary",
     "rounded",
     "shadow",
+    "details-image",
   );
   listingImage.alt = listing.title;
+  listingImage.style.cursor = "pointer";
   const nonImageRegex =
     /^(https:\/\/unsplash\.com.*)(?<!\.(jpg|jpeg|png|gif|bmp|svg))$/;
   const noValidImage = nonImageRegex.test(listing.media[0]);
@@ -160,9 +163,11 @@ export function createListingDetailsHTML(listing, parentElement) {
         "border",
         "border-secondary",
         "rounded",
+        "details-image",
       );
       imageThumbnail.src = listing.media[i];
       imageThumbnail.alt = listing.title;
+      imageThumbnail.style.cursor = "pointer";
       thumbnailDiv.append(imageThumbnail);
       imageThumbnailsContainer.append(thumbnailDiv);
     }
