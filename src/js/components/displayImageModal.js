@@ -1,5 +1,4 @@
 export function displayImageModal(images, modalImage) {
-  // const images = document.querySelectorAll(".details-image");
   images.forEach((image) => {
     image.addEventListener("click", () => {
       modalImage.src = image.src;
