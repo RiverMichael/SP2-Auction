@@ -3,6 +3,7 @@ import { getListings } from "../utils/getListings.js";
 import { setSearchListeners } from "../utils/setSearchListeners.js";
 import { renderListings } from "../components/render.js";
 import { clearHTML } from "../components/clearHTML.js";
+import { createMessage } from "../components/createMessage.js";
 
 async function listings() {
   const listingsFeedContainer = document.querySelector("#allListings");
@@ -17,6 +18,12 @@ async function listings() {
     displayLoggedInMenu();
   } catch (error) {
     console.log(error);
+    clearHTML(listingsFeedContainer);
+    createMessage(
+      listingsFeedContainer,
+      ["my-3", "alert", "alert-danger", "text-center", "fw-bold"],
+      "Something went wrong. Please try again later.",
+    );
   }
 }
 listings();

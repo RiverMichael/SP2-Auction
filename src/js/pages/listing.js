@@ -8,6 +8,7 @@ import { displayAllBids } from "../components/displayAllBids.js";
 import { displayImageModal } from "../components/displayImageModal.js";
 import { createBidFormModalHTML } from "../components/createHTML.js";
 import { getUserCredits } from "../utils/getUserCredits.js";
+import { createMessage } from "../components/createMessage.js";
 
 async function displayListingDetails() {
   const listingContainer = document.querySelector("#listingDetailsContainer");
@@ -41,6 +42,12 @@ async function displayListingDetails() {
     displayImageModal(detailImages, imageModal);
   } catch (error) {
     console.log(error);
+    clearHTML(listingContainer);
+    createMessage(
+      listingContainer,
+      ["my-3", "alert", "alert-danger", "text-center", "fw-bold"],
+      "Something went wrong. Please try again later.",
+    );
   }
 }
 displayListingDetails();
