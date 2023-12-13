@@ -25,6 +25,28 @@
   object-fit: cover;
 }
 
+#link-goBack {
+  cursor: pointer;
+}
+
+.details-image {
+  max-height: 500px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.thumbnail-image {
+  width: 50px;
+  height: 50px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.thumbnail-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.25s ease-in-out;
+}
+
 // Footer
 .logo-footer {
   max-width: 150px;

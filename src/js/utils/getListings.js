@@ -16,7 +16,7 @@ import { allListingsURL } from "../api/constants.js";
  */
 export async function getListings(numberOfListings = 100, offset = 0) {
   return await doFetch(
-    `${allListingsURL}&limit=${numberOfListings}&${offset}&sort=created&sortOrder=desc`,
+    `${allListingsURL}&limit=${numberOfListings}&offset=${offset}&sort=created&sortOrder=desc`,
     getData,
   );
 }
