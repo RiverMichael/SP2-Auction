@@ -1,5 +1,5 @@
 import { checkIfLoggedIn } from "../utils/checkIfLoggedIn.js";
-import { getProfileDetails } from "../utils/getProfileDetails.js";
+import { getUserCredits } from "../utils/getUserCredits.js";
 import { getFromStorage } from "../utils/getFromStorage.js";
 
 /**
@@ -15,9 +15,9 @@ export async function displayLoggedInMenu() {
   try {
     const isUserLoggedIn = checkIfLoggedIn();
     if (isUserLoggedIn) {
-      const profileDetails = await getProfileDetails(userName);
+      const userCredits = await getUserCredits(userName);
 
-      creditsContainer.innerText = profileDetails.credits;
+      creditsContainer.innerText = userCredits;
       loginRegisterButton.classList.add("d-none");
       headerProfile.classList.remove("d-none");
       addListingButton.classList.remove("d-none");
