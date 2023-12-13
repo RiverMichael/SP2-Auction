@@ -376,6 +376,50 @@
             </div>
           </div>
         </div>
+
+        <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+          <div
+            class="toast bg-success"
+            id="addBidValidation"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header bg-success text-light">
+              <h5 class="my-0">Bid successful!</h5>
+              <button
+                class="btn-close btn-close-white ms-auto"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="toast-body text-light fs-6">
+              Your bid has been added to the listing
+            </div>
+          </div>
+        </div>
+
+        <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+          <div
+            class="toast bg-danger"
+            id="addBidValidationFailed"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header bg-danger text-light">
+              <h5 class="my-0">Bid failed!</h5>
+              <button
+                class="btn-close btn-close-white ms-auto"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="toast-body text-light fs-6">
+              Your bid was not added to the listing
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 

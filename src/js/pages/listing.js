@@ -9,8 +9,9 @@ import { displayImageModal } from "../components/displayImageModal.js";
 import { createBidFormModalHTML } from "../components/createHTML.js";
 import { getUserCredits } from "../utils/getUserCredits.js";
 import { createMessage } from "../components/createMessage.js";
+import { onAddBidFormSubmit } from "../utils/onAddBidFormSubmit.js";
 
-async function displayListingDetails() {
+export async function displayListingDetails() {
   const listingContainer = document.querySelector("#listingDetailsContainer");
   const imageModal = document.querySelector("#modalImage");
   const bidModalTitleContainer = document.querySelector("#bidModalLabel");
@@ -20,13 +21,12 @@ async function displayListingDetails() {
     const listing = await getListingDetails();
     const userCredits = await getUserCredits();
 
-    console.log(listing);
-
     document.title = `${listing.title} | AuctionHub`;
 
     clearHTML(listingContainer);
     renderListingDetails(listing, listingContainer);
     displayLoggedInMenu();
+    checkIfListingSellerIsUser(listing);
     enableBidButton();
     displayAllBids();
 
@@ -36,7 +36,8 @@ async function displayListingDetails() {
       bidModalTitleContainer,
       bidModalDetailsContainer,
     );
-    checkIfListingSellerIsUser(listing);
+    const createNewBidForm = document.querySelector("#addBidForm");
+    createNewBidForm.addEventListener("submit", onAddBidFormSubmit);
 
     const detailImages = document.querySelectorAll(".details-image");
     displayImageModal(detailImages, imageModal);
