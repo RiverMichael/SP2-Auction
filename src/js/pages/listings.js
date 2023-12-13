@@ -9,6 +9,7 @@ async function listings() {
   const searchContainer = document.querySelector("#displaySearch");
   try {
     const allListings = await getListings();
+    console.log(allListings);
 
     clearHTML(listingsFeedContainer);
     renderListings(allListings, listingsFeedContainer);

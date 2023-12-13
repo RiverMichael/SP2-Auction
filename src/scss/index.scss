@@ -25,12 +25,12 @@
   object-fit: cover;
 }
 
-#link-goBack,
-#bidsLink {
+#link-goBack {
   cursor: pointer;
 }
 
 .details-image {
+  max-height: 500px;
   object-position: center;
   object-fit: cover;
 }

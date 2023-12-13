@@ -4,6 +4,7 @@ import { displayLoggedInMenu } from "../components/displayLoggedInMenu.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { checkIfListingSellerIsUser } from "../utils/checkIfListingSellerIsUser.js";
 import { enableBidButton } from "../components/enableBidButton.js";
+import { displayAllBids } from "../components/displayAllBids.js";
 
 async function displayListingDetails() {
   const listingContainer = document.querySelector("#listingDetailsContainer");
@@ -18,6 +19,7 @@ async function displayListingDetails() {
     renderListingDetails(listing, listingContainer);
     displayLoggedInMenu();
     enableBidButton();
+    displayAllBids();
     checkIfListingSellerIsUser(listing);
   } catch (error) {
     console.log(error);
