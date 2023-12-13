@@ -6,28 +6,49 @@ import { checkIfListingSellerIsUser } from "../utils/checkIfListingSellerIsUser.
 import { enableBidButton } from "../components/enableBidButton.js";
 import { displayAllBids } from "../components/displayAllBids.js";
 import { displayImageModal } from "../components/displayImageModal.js";
+import { createBidFormModalHTML } from "../components/createHTML.js";
+import { getUserCredits } from "../utils/getUserCredits.js";
+import { createMessage } from "../components/createMessage.js";
+import { onAddBidFormSubmit } from "../utils/onAddBidFormSubmit.js";
 
-async function displayListingDetails() {
+export async function displayListingDetails() {
   const listingContainer = document.querySelector("#listingDetailsContainer");
   const imageModal = document.querySelector("#modalImage");
+  const bidModalTitleContainer = document.querySelector("#bidModalLabel");
+  const bidModalDetailsContainer = document.querySelector("#bidDetails");
 
   try {
     const listing = await getListingDetails();
-    console.log(listing);
+    const userCredits = await getUserCredits();
 
     document.title = `${listing.title} | AuctionHub`;
 
     clearHTML(listingContainer);
     renderListingDetails(listing, listingContainer);
     displayLoggedInMenu();
+    checkIfListingSellerIsUser(listing);
     enableBidButton();
     displayAllBids();
-    checkIfListingSellerIsUser(listing);
+
+    createBidFormModalHTML(
+      listing,
+      userCredits,
+      bidModalTitleContainer,
+      bidModalDetailsContainer,
+    );
+    const createNewBidForm = document.querySelector("#addBidForm");
+    createNewBidForm.addEventListener("submit", onAddBidFormSubmit);
 
     const detailImages = document.querySelectorAll(".details-image");
     displayImageModal(detailImages, imageModal);
   } catch (error) {
     console.log(error);
+    clearHTML(listingContainer);
+    createMessage(
+      listingContainer,
+      ["my-3", "alert", "alert-danger", "text-center", "fw-bold"],
+      "Something went wrong. Please try again later.",
+    );
   }
 }
 displayListingDetails();

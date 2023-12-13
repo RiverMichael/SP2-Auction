@@ -402,6 +402,8 @@ export function createListingDetailsHTML(listing, parentElement) {
   const addBidButton = document.createElement("button");
   addBidButton.disabled = true;
   addBidButton.id = "addBidButton";
+  addBidButton.setAttribute("data-bs-toggle", "modal");
+  addBidButton.setAttribute("data-bs-target", "#bidModal");
   addBidButton.classList.add(
     "btn",
     "btn-primary",
@@ -436,4 +438,41 @@ export function createListingDetailsHTML(listing, parentElement) {
   descriptionContainer.append(listingDescription);
 
   parentElement.append(listingContainer);
+}
+
+export function createBidFormModalHTML(
+  listing,
+  credits,
+  modalTitleContainer,
+  modalDetailsContainer,
+) {
+  const modalTitle = document.createElement("h2");
+  modalTitle.classList.add("mb-0");
+  modalTitle.innerText = "Bid on ";
+  modalTitleContainer.append(modalTitle);
+
+  const titleSpan = document.createElement("span");
+  titleSpan.classList.add("text-secondary");
+  titleSpan.innerText = listing.title;
+  modalTitle.append(titleSpan);
+
+  const CurrentBid = document.createElement("p");
+  CurrentBid.classList.add("fw-bold", "mb-0");
+  CurrentBid.innerText = "Current Bid: ";
+  modalDetailsContainer.append(CurrentBid);
+
+  const CurrentBidSpan = document.createElement("span");
+  CurrentBidSpan.classList.add("fw-normal", "ms-2");
+  if (listing.bids.length > 0) {
+    const bids = listing.bids.map((bid) => bid.amount).sort((a, b) => b - a);
+    CurrentBidSpan.innerText = `${bids[0]} credits`;
+  } else {
+    CurrentBidSpan.innerText = `No bids`;
+  }
+  CurrentBid.append(CurrentBidSpan);
+
+  const showCredits = document.createElement("p");
+  showCredits.classList.add("mb-0");
+  showCredits.innerText = `You have ${credits} credits`;
+  modalDetailsContainer.append(showCredits);
 }
