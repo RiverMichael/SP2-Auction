@@ -476,3 +476,14 @@ export function createBidFormModalHTML(
   showCredits.innerText = `You have ${credits} credits`;
   modalDetailsContainer.append(showCredits);
 }
+
+export function createNewImageInput(parentElement) {
+  const addImageButton = document.getElementById("addListingImageButton");
+  const newImageInput = document.createElement("input");
+  newImageInput.classList.add("form-control", "mb-1");
+  newImageInput.type = "url";
+  newImageInput.name = "media";
+  newImageInput.placeholder = "https://example.com/image.jpg";
+
+  parentElement.appendChild(newImageInput).after(addImageButton);
+}

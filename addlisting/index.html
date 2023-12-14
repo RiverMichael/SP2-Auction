@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Add a new listing on your favorite auction site AuctionHub"
+    />
+
+    <title>Add listing | AuctionHub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/dist/css/index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <link rel="icon" type="image/x-icon" href="images/logo/ah_logo-dark.png" />
+    <link rel="icon" href="data:;base64,=" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="../src/js/pages/addlisting.js" defer></script>
+    <script type="module" src="../src/js/common.js" defer></script>
+  </head>
+  <body class="min-vh-100 d-flex flex-column bg-white text-black">
+    <header class="sticky-top p-2 bg-white">
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a href="/" class="navbar-brand">
+            <img
+              src="../images/logo/ah_logo-dark.png"
+              alt="AuctionHub logotype"
+              class="logo"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse mb-3 mb-md-0"
+            id="navbarCollapse"
+          >
+            <div
+              class="navbar-nav align-items-center text-center fw-bold ms-auto p-2 mt-3 mt-md-0"
+            >
+              <a href="/" class="nav-item nav-link text-uppercase">home</a>
+              <a href="/listings/" class="nav-item nav-link text-uppercase"
+                >listings</a
+              >
+              <a
+                href="#"
+                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase mt-2 mt-md-0 ms-md-2 d-none"
+                id="add-listing-button"
+                >add listing</a
+              >
+
+              <div
+                class="d-flex flex-column align-items-center mt-2 d-none d-md-none"
+                id="nav-profile"
+              >
+                <a href="/profile/" class="nav-item nav-link text-uppercase"
+                  >my profile</a
+                >
+                <button class="nav-item nav-link text-uppercase button-logout">
+                  log out
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-md-0 ms-auto"
+              id="not-logged-in"
+            >
+              <a
+                href="/auth/login.html"
+                class="nav-item btn btn-sm btn-outline-dark rounded-1 text-uppercase"
+              >
+                login
+              </a>
+
+              <a
+                href="/auth/register.html"
+                class="nav-item btn btn-sm btn-primary rounded-1 text-uppercase"
+              >
+                register
+              </a>
+            </div>
+
+            <div class="ms-auto d-flex gap-3 d-none" id="header-profile">
+              <div
+                class="d-none d-md-flex gap-1 align-items-center"
+                id="headerCredits"
+              >
+                <span id="creditsHeaderContainer">0</span>
+                <p class="m-0">credits</p>
+              </div>
+              <div
+                class="nav-item dropdown d-none d-md-block"
+                id="header-profile-button"
+              >
+                <button
+                  class="btn nav-link dropdown-toggle d-flex align-items-center"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-label="profile menu"
+                >
+                  <i class="bi bi-person-circle"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a href="/profile/" class="dropdown-item text-uppercase"
+                      >my profile</a
+                    >
+                  </li>
+                  <li>
+                    <button
+                      class="dropdown-item text-uppercase button-logout"
+                      type="button"
+                    >
+                      log out
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
+
+  <main>
+    <div class="container py-5">
+      <div class="d-flex flex-column align-items-center mt-5">
+        <h1 class="mb-3">Add listing</h1>
+
+        <form class="needs-validation mb-3" id="formAddListing" novalidate>
+          <div class="mb-3">
+            <label for="addListingTitle" class="form-label mb-1">Title</label
+            ><span class="fw-light"
+              ><small><em> (Required)</em></small></span
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="addListingTitle"
+              name="title"
+              placeholder="Title"
+              required
+            />
+            <div class="invalid-feedback alert alert-danger py-1">
+              Please enter a title
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="addListingEndDate" class="form-label mb-1"
+              >End date / time</label
+            ><span class="fw-light"
+              ><small><em> (Required)</em></small></span
+            >
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="addListingEnd"
+              name="endsAt"
+              required
+            />
+            <div class="invalid-feedback alert alert-danger py-1">
+              Please enter date and time
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="addListingDescription" class="form-label mb-1"
+              >Description</label
+            >
+            <textarea
+              name="description"
+              id="addListingDescription"
+              cols="30"
+              rows="3"
+              class="form-control"
+              placeholder="Add Description"
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="addListingTags" class="form-label mb-1">Tags</label>
+            <input
+              type="text"
+              name="tags"
+              class="form-control"
+              id="addListingTags"
+            />
+          </div>
+
+          <div class="mb-3" id="addImagesContainer">
+            <label for="addListingImage" class="form-label mb-1"
+              >Image URL <i class="bi bi-images"></i
+            ></label>
+            <input
+              name="media"
+              type="url"
+              class="form-control mb-1"
+              id="addListingImage"
+              placeholder="https://example.com/image.jpg"
+            />
+            <button
+              type="button"
+              class="btn btn-sm text-secondary border-0 fw-normal p-0"
+              id="addListingImageButton"
+            >
+              Add more images
+            </button>
+          </div>
+
+          <div class="d-flex justify-content-center gap-3">
+            <button
+              type="submit"
+              class="btn btn-sm btn-primary rounded-1 text-uppercase px-4"
+            >
+              add listing
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-dark rounded-1 text-uppercase border cancelButton"
+            >
+              cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+      <div
+        class="toast bg-success"
+        id="addListingValidation"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-success text-light">
+          <h5 class="my-0">New listing created successful!</h5>
+          <button
+            class="btn-close btn-close-white ms-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body text-light fs-6">
+          Your new listing has been created.
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+      <div
+        class="toast bg-danger"
+        id="addListingValidationFailed"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-danger text-light">
+          <h5 class="my-0">Create new listing failed!</h5>
+          <button
+            class="btn-close btn-close-white ms-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body text-light fs-6">
+          Your listing was not created.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer
+    class="mt-auto bg-black d-flex flex-column align-items-center justify-content-center"
+  >
+    <div
+      class="container-fluid row flex-column gap-4 flex-md-row my-3 flex-column-reverse"
+    >
+      <div
+        class="col d-flex gap-3 justify-content-center justify-content-md-start align-items-center"
+      >
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          aria-label="visit our X page"
+        >
+          <img
+            src="../images/icons/X.svg"
+            alt="logotype of X"
+            class="icon-social rounded"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          aria-label="visit our Instagram page"
+        >
+          <img
+            src="../images/icons/Instagram.svg"
+            alt="logotype of Instagram"
+            class="icon-social rounded"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          aria-label="visit our Facebook page"
+        >
+          <img
+            src="../images/icons/Facebook.svg"
+            alt="logotype of Facebook"
+            class="icon-social rounded"
+          />
+        </a>
+      </div>
+
+      <div class="col-auto d-none d-md-block">
+        <a href="/" aria-label="Go to the top of the page">
+          <img
+            src="../images/logo/ah_logo-light.png"
+            alt="AuctionHub logotype"
+            class="logo-footer"
+          />
+        </a>
+      </div>
+
+      <div
+        class="col fw-bold d-flex gap-3 text-uppercase fw-bold justify-content-center justify-content-md-end align-items-center"
+      >
+        <a href="/" class="link-light link-offset-2">home</a>
+        <a href="/about/" class="link-light link-offset-2">about</a>
+        <a href="/contact/" class="link-light link-offset-2">contact</a>
+      </div>
+    </div>
+
+    <div class="mb-2 text-center text-white fw-lighter">
+      Copyright &copy 2023
+      <a
+        href="https://www.michaelriver.dev"
+        target="_blank"
+        class="link-light link-offset-2 link-underline-opacity-50 text-capitalize"
+        >michael river nilsson</a
+      >
+    </div>
+  </footer>
+</html>

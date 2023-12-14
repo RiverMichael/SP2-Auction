@@ -3,12 +3,13 @@
  * @returns {object} - The user object.
  */
 export function createUser() {
-  const emailInput = document.querySelector("#loginEmail");
-  const passwordInput = document.querySelector("#loginPassword");
+  const form = document.querySelector("#formLogin");
+  const formData = new FormData(form);
+  const createLoginObject = Object.fromEntries(formData.entries());
 
   const user = {
-    email: emailInput.value,
-    password: passwordInput.value,
+    email: createLoginObject.email,
+    password: createLoginObject.password,
   };
 
   return user;

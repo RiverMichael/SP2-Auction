@@ -19,12 +19,11 @@ import { showToast } from "../components/showToast.js";
  */
 export async function handleUserLogin(userDetails) {
   const loginValidation = document.querySelector("#loginValidation");
-  const loginFailed = document.querySelector("#loginFailed");
+  const loginFailed = document.querySelector("#loginValidationFailed");
 
   try {
     const options = postData(userDetails);
     const result = await doFetch(`${authURL}login`, options);
-    console.log(result);
 
     if (result.accessToken) {
       saveToStorage("accessToken", result.accessToken);

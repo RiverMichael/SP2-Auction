@@ -3,16 +3,15 @@
  * @returns {Object} - The new user object.
  */
 export function createNewUser() {
-  const userNameInput = document.querySelector("#registerUsername");
-  const emailInput = document.querySelector("#registerEmail");
-  const passwordInput = document.querySelector("#registerPassword");
-  const avatarInput = document.querySelector("#registerAvatar");
+  const form = document.querySelector("#formRegister");
+  const formData = new FormData(form);
+  const createRegisterObject = Object.fromEntries(formData.entries());
 
   const newUser = {
-    name: userNameInput.value,
-    email: emailInput.value,
-    password: passwordInput.value,
-    avatar: avatarInput.value,
+    name: createRegisterObject.name,
+    email: createRegisterObject.email,
+    password: createRegisterObject.password,
+    avatar: createRegisterObject.avatar,
   };
 
   return newUser;

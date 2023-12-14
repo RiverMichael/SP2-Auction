@@ -2,6 +2,7 @@ import { doFetch } from "../api/doFetch.js";
 import { authURL } from "../api/constants.js";
 import { postData } from "../api/fetchOptions.js";
 import { showToast } from "../components/showToast.js";
+import { handleUserLogin } from "./handleUserLogin.js";
 
 /**
  * Handles the registration of a new user with the API.
@@ -22,20 +23,22 @@ export async function handleRegisterUser(userDetails) {
   const registrationValidation = document.querySelector(
     "#registrationValidation",
   );
+  const registrationValidationFailed = document.querySelector(
+    "#registrationValidationFailed",
+  );
 
   try {
-    console.log(userDetails);
-
     const options = postData(userDetails);
     const result = await doFetch(`${authURL}register`, options);
-    console.log("result", result);
 
     if (result.id) {
       showToast(registrationValidation);
       setTimeout(() => {
-        // Change to handleUserLogin
+        handleUserLogin(userDetails);
         window.location.href = "/";
       }, 2000);
+    } else {
+      showToast(registrationValidationFailed);
     }
   } catch (error) {
     console.log(error);

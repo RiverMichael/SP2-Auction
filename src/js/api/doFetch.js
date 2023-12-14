@@ -22,6 +22,8 @@ export async function doFetch(url, customOptions = {}) {
     };
     const response = await fetch(url, defaultOptions);
     const json = await response.json();
+    console.log(json);
+
     return json;
   } catch (error) {
     console.log(error);
