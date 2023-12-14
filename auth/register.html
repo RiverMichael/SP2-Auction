@@ -55,6 +55,7 @@
               >
               <input
                 type="text"
+                name="name"
                 class="form-control"
                 id="registerUsername"
                 placeholder="Username"
@@ -72,6 +73,7 @@
               <label for="registerEmail" class="form-label mb-1">Email</label>
               <input
                 type="email"
+                name="email"
                 class="form-control"
                 id="registerEmail"
                 placeholder="user@stud.noroff.no"
@@ -91,6 +93,7 @@
               >
               <input
                 type="password"
+                name="password"
                 class="form-control"
                 id="registerPassword"
                 placeholder="********"
@@ -107,13 +110,13 @@
 
             <div class="mb-4">
               <label for="registerAvatar" class="form-label mb-1"
-                ><i class="bi bi-images"></i> Profile avatar URL
-                <span class="fw-light"
-                  ><small><em>(Optional)</em></small></span
-                ></label
+                ><i class="bi bi-images"></i> Profile avatar URL </label
+              ><span class="fw-light"
+                ><small><em> (Optional)</em></small></span
               >
               <input
                 type="url"
+                name="avatar"
                 class="form-control"
                 id="registerAvatar"
                 placeholder="https://example.com/image.jpg"
@@ -167,6 +170,28 @@
           </div>
           <div class="toast-body fs-6">
             You have successfully created an account
+          </div>
+        </div>
+      </div>
+
+      <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+        <div
+          class="toast bg-danger"
+          id="registrationValidationFailed"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header bg-danger text-light">
+            <h5 class="my-0">Registration failed</h5>
+            <button
+              class="btn-close btn-close-white ms-auto"
+              data-bs-dismiss="toast"
+              aria-label="close"
+            ></button>
+          </div>
+          <div class="toast-body text-light fs-6">
+            Something went wrong, please try again.
           </div>
         </div>
       </div>
