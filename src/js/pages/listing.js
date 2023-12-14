@@ -10,6 +10,8 @@ import { createBidFormModalHTML } from "../components/createHTML.js";
 import { getUserCredits } from "../utils/getUserCredits.js";
 import { createMessage } from "../components/createMessage.js";
 import { onAddBidFormSubmit } from "../utils/onAddBidFormSubmit.js";
+import { onUpdateListingFormSubmit } from "../utils/onUpdateListingFormSubmit.js";
+import { handleDeleteListing } from "../utils/handleDeleteListing.js";
 
 export async function displayListingDetails() {
   const listingContainer = document.querySelector("#listingDetailsContainer");
@@ -29,15 +31,21 @@ export async function displayListingDetails() {
     checkIfListingSellerIsUser(listing);
     enableBidButton();
     displayAllBids();
-
     createBidFormModalHTML(
       listing,
       userCredits,
       bidModalTitleContainer,
       bidModalDetailsContainer,
     );
+
     const createNewBidForm = document.querySelector("#addBidForm");
     createNewBidForm.addEventListener("submit", onAddBidFormSubmit);
+
+    const updateListingForm = document.querySelector("#updateListingForm");
+    updateListingForm.addEventListener("submit", onUpdateListingFormSubmit);
+
+    const deleteListingButton = document.querySelector("#deleteListingButton");
+    deleteListingButton.addEventListener("click", handleDeleteListing);
 
     const detailImages = document.querySelectorAll(".details-image");
     displayImageModal(detailImages, imageModal);
