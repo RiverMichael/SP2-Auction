@@ -10,6 +10,7 @@ import { createBidFormModalHTML } from "../components/createHTML.js";
 import { getUserCredits } from "../utils/getUserCredits.js";
 import { createMessage } from "../components/createMessage.js";
 import { onAddBidFormSubmit } from "../utils/onAddBidFormSubmit.js";
+import { onUpdateListingFormSubmit } from "../utils/onUpdateListingFormSubmit.js";
 
 export async function displayListingDetails() {
   const listingContainer = document.querySelector("#listingDetailsContainer");
@@ -38,6 +39,9 @@ export async function displayListingDetails() {
     );
     const createNewBidForm = document.querySelector("#addBidForm");
     createNewBidForm.addEventListener("submit", onAddBidFormSubmit);
+
+    const updateListingForm = document.querySelector("#updateListingForm");
+    updateListingForm.addEventListener("submit", onUpdateListingFormSubmit);
 
     const detailImages = document.querySelectorAll(".details-image");
     displayImageModal(detailImages, imageModal);

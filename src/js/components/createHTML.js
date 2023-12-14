@@ -369,14 +369,17 @@ export function createListingDetailsHTML(listing, parentElement) {
     updatedContainer.append(updated);
 
     const updatedSpan = document.createElement("span");
-    updatedSpan.innerText = new Date(listing.updated).toLocaleDateString(
-      "no-NO",
-      {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      },
-    );
+    const updatedDate = new Date(listing.updated).toLocaleDateString("no-NO", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    const updatedTime = new Date(listing.updated).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    updatedSpan.innerText = updatedDate + " - " + updatedTime;
     updatedContainer.append(updatedSpan);
   }
 
