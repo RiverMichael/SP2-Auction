@@ -161,7 +161,10 @@
 
         <form class="needs-validation mb-3" id="formAddListing" novalidate>
           <div class="mb-3">
-            <label for="addListingTitle" class="form-label mb-1">Title</label>
+            <label for="addListingTitle" class="form-label mb-1">Title</label
+            ><span class="fw-light"
+              ><small><em> (Required)</em></small></span
+            >
             <input
               type="text"
               class="form-control"
@@ -178,12 +181,14 @@
           <div class="mb-3">
             <label for="addListingEndDate" class="form-label mb-1"
               >End date / time</label
+            ><span class="fw-light"
+              ><small><em> (Required)</em></small></span
             >
             <input
               type="datetime-local"
               class="form-control"
               id="addListingEnd"
-              name="dateTime"
+              name="endsAt"
               required
             />
             <div class="invalid-feedback alert alert-danger py-1">
@@ -205,16 +210,26 @@
             ></textarea>
           </div>
 
+          <div class="mb-3">
+            <label for="addListingTags" class="form-label mb-1">Tags</label>
+            <input
+              type="text"
+              name="tags"
+              class="form-control"
+              id="addListingTags"
+            />
+          </div>
+
           <div class="mb-3" id="addImagesContainer">
             <label for="addListingImage" class="form-label mb-1"
               >Image URL <i class="bi bi-images"></i
             ></label>
             <input
-              name="image"
+              name="media"
               type="url"
-              class="form-control"
+              class="form-control mb-1"
               id="addListingImage"
-              placeholder="https://"
+              placeholder="https://example.com/image.jpg"
             />
             <button
               type="button"
@@ -240,6 +255,50 @@
             </button>
           </div>
         </form>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+      <div
+        class="toast bg-success"
+        id="addListingValidation"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-success text-light">
+          <h5 class="my-0">New listing created successful!</h5>
+          <button
+            class="btn-close btn-close-white ms-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body text-light fs-6">
+          Your new listing has been created.
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
+      <div
+        class="toast bg-danger"
+        id="addListingValidationFailed"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header bg-danger text-light">
+          <h5 class="my-0">Create new listing failed!</h5>
+          <button
+            class="btn-close btn-close-white ms-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body text-light fs-6">
+          Your listing was not created.
+        </div>
       </div>
     </div>
   </main>
