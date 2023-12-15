@@ -1,6 +1,7 @@
 import {
   createListingCardHTML,
   createListingDetailsHTML,
+  createProfileBidCardHTML,
 } from "./createHTML.js";
 
 /**
@@ -16,4 +17,10 @@ export function renderListings(listings, parentElement) {
 
 export function renderListingDetails(listing, parentElement) {
   createListingDetailsHTML(listing, parentElement);
+}
+
+export function renderProfileBidCard(bid, parentElement) {
+  bid.forEach((bid) => {
+    createProfileBidCardHTML(bid, parentElement);
+  });
 }
