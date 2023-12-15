@@ -230,6 +230,73 @@
           </div>
         </div>
       </div>
+
+      <div
+        class="modal"
+        id="changeAvatarModal"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="changeAvatarModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-light">
+            <div class="modal-header">
+              <h1 class="" id="changeAvatarModalLabel">Change avatar</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="container">
+                <form
+                  class="needs-validation mb-3"
+                  id="changeAvatarForm"
+                  novalidate
+                >
+                  <label for="changeAvatar" class="form-label mb-1"
+                    ><i class="bi bi-images"></i> Profile avatar URL
+                  </label>
+
+                  <input
+                    type="URL"
+                    class="form-control"
+                    id="changeAvatar"
+                    name="changeAvatar"
+                    placeholder="https://example.com/image.jpg"
+                    required
+                  />
+                  <div class="form-text" id="changeAvatarHelp">
+                    Avatar must be a valid URL
+                  </div>
+                  <div class="invalid-feedback alert alert-danger py-1">
+                    Please enter a valid url
+                  </div>
+                  <div class="d-flex justify-content-center gap-3 my-4">
+                    <button
+                      type="submit"
+                      class="btn btn-sm btn-primary rounded-1 text-uppercase px-4"
+                    >
+                      update
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-dark rounded-1 text-uppercase border"
+                      data-bs-dismiss="modal"
+                    >
+                      cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer
