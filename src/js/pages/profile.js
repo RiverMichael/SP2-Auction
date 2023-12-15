@@ -32,7 +32,7 @@ export async function displayProfile() {
     }));
 
     const todaysDate = new Date();
-    const activeListings = profileBidsDetails.filter(
+    const activeBidListings = profileBidsDetails.filter(
       ({ listingEndsAt }) => listingEndsAt > todaysDate,
     );
 
@@ -41,10 +41,18 @@ export async function displayProfile() {
     createProfileDetailsHTML(profileDetails, profileContainer);
     checkIfProfileIsUsersProfile();
     clearHTML(profileListingsContainer);
-    renderListings(profileListings, profileListingsContainer);
+    if (profileListings.length > 0) {
+      renderListings(profileListings, profileListingsContainer);
+    } else {
+      createMessage(
+        profileListingsContainer,
+        ["my-3", "text-center", "fw-bold"],
+        "You have no active listings.",
+      );
+    }
     clearHTML(profileActiveBidsContainer);
-    if (activeListings.length > 0) {
-      renderProfileBidCard(activeListings, profileActiveBidsContainer);
+    if (activeBidListings.length > 0) {
+      renderProfileBidCard(activeBidListings, profileActiveBidsContainer);
     } else {
       createMessage(
         profileActiveBidsContainer,

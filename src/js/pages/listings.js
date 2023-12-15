@@ -5,16 +5,16 @@ import { renderListings } from "../components/render.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 
-async function listings() {
+async function displayListings() {
   const listingsFeedContainer = document.querySelector("#allListings");
   const searchContainer = document.querySelector("#displaySearch");
+
   try {
-    const allListings = await getListings();
-    console.log(allListings);
+    const listings = await getListings();
 
     clearHTML(listingsFeedContainer);
-    renderListings(allListings, listingsFeedContainer);
-    setSearchListeners(allListings, searchContainer);
+    renderListings(listings, listingsFeedContainer);
+    setSearchListeners(listings, searchContainer);
     displayLoggedInMenu();
   } catch (error) {
     console.log(error);
@@ -26,4 +26,4 @@ async function listings() {
     );
   }
 }
-listings();
+displayListings();

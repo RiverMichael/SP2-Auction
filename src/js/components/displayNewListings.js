@@ -5,12 +5,13 @@ import { createMessage } from "../components/createMessage.js";
 
 /**
  * Displays the newest listings.
+ * @param {Number} numberOfListings - The number of listings to display. Defaults to 4.
  */
-export async function displayNewListings() {
+export async function displayNewListings(numberOfListings = 4) {
   const listingsNewContainer = document.querySelector("#listingsNew");
 
   try {
-    const listings = await getListings(4);
+    const listings = await getListings(numberOfListings);
 
     clearHTML(listingsNewContainer);
     renderListings(listings, listingsNewContainer);
