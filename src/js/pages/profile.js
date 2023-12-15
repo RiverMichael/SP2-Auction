@@ -19,6 +19,8 @@ export async function displayProfile() {
       "#profileActiveBidsContainer",
     );
     const profileName = getProfileName();
+    console.log(profileName);
+
     const profileDetails = await getProfileDetails(profileName);
     const profileListings = await getProfileListings(profileName);
 
