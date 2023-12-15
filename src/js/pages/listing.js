@@ -28,8 +28,8 @@ export async function displayListingDetails() {
     clearHTML(listingContainer);
     renderListingDetails(listing, listingContainer);
     displayLoggedInMenu();
-    checkIfListingSellerIsUser(listing);
     enableBidButton();
+    checkIfListingSellerIsUser(listing);
     displayAllBids();
     createBidFormModalHTML(
       listing,

@@ -13,5 +13,8 @@ import { getData } from "../api/fetchOptions.js";
  * ```
  */
 export async function getProfileDetails(userName) {
-  return await doFetch(`${profilesURL}${userName}?_listings`, getData);
+  return await doFetch(
+    `${profilesURL}${userName}?_listings=true&_active=true`,
+    getData,
+  );
 }
