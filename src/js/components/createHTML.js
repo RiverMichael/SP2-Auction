@@ -15,7 +15,7 @@
  */
 export function createListingCardHTML(listing, parentElement) {
   const cardContainer = document.createElement("div");
-  cardContainer.classList.add("col-12", "col-sm-6", "col-md-3");
+  cardContainer.classList.add("col-12", "col-sm-6", "col-lg-3");
 
   const cardLink = document.createElement("a");
   cardLink.classList.add("link-light");
@@ -50,7 +50,6 @@ export function createListingCardHTML(listing, parentElement) {
   } else {
     cardTitle.innerText = listing.title;
   }
-
   cardBody.append(cardTitle);
 
   const currentBid = document.createElement("p");
@@ -489,4 +488,157 @@ export function createNewImageInput(parentElement) {
   newImageInput.placeholder = "https://example.com/image.jpg";
 
   parentElement.appendChild(newImageInput).after(addImageButton);
+}
+
+export function createProfileDetailsHTML(profileDetails, parentElement) {
+  const profile = document.createElement("section");
+  profile.classList.add(
+    "row",
+    "align-items-center",
+    "justify-content-start",
+    "py-4",
+    "border-bottom",
+    "border-secondary",
+    "border-5",
+  );
+
+  const profileAvatarContainer = document.createElement("div");
+  profileAvatarContainer.classList.add(
+    "col-auto",
+    "d-flex",
+    "flex-column",
+    "align-items-center",
+    "gap-1",
+  );
+  profile.append(profileAvatarContainer);
+
+  const profileAvatar = document.createElement("img");
+  profileAvatar.classList.add(
+    "img-fluid",
+    "rounded-circle",
+    "shadow",
+    "profile-avatar",
+  );
+  if (profileDetails.avatar) {
+    profileAvatar.alt = profileDetails.name;
+    profileAvatar.src = profileDetails.avatar;
+    profileAvatarContainer.append(profileAvatar);
+  } else {
+    profileAvatar.alt = "No avatar";
+    profileAvatar.src = "https://fakeimg.pl/150x150?text=No avatar";
+    profileAvatarContainer.append(profileAvatar);
+  }
+
+  const changeAvatarButton = document.createElement("button");
+  changeAvatarButton.classList.add(
+    "btn",
+    "text-secondary",
+    "border-0",
+    "fw-light",
+    "p-0",
+  );
+  changeAvatarButton.id = "changeAvatarButton";
+  changeAvatarButton.setAttribute("data-bs-toggle", "modal");
+  changeAvatarButton.setAttribute("data-bs-target", "#changeAvatarModal");
+  changeAvatarButton.innerText = "Change avatar";
+  profileAvatarContainer.append(changeAvatarButton);
+
+  const profileDetailsContainer = document.createElement("div");
+  profileDetailsContainer.classList.add(
+    "col-auto",
+    "d-flex",
+    "flex-column",
+    "align-items-start",
+  );
+  profile.append(profileDetailsContainer);
+
+  const profileName = document.createElement("h1");
+  profileName.classList.add("text-secondary");
+  profileName.innerText = profileDetails.name;
+  profileDetailsContainer.append(profileName);
+
+  const credits = document.createElement("p");
+  credits.id = "profileCredits";
+  credits.classList.add("fw-bold", "m-0");
+  credits.innerText = `Credits: `;
+  profileDetailsContainer.append(credits);
+
+  const creditsSpan = document.createElement("span");
+  creditsSpan.classList.add("fw-normal", "mb-0");
+  creditsSpan.innerText = profileDetails.credits;
+  credits.append(creditsSpan);
+
+  parentElement.append(profile);
+}
+
+export function createProfileBidCardHTML(bid, parentElement) {
+  const cardContainer = document.createElement("div");
+  cardContainer.classList.add("col-12", "col-sm-6", "col-lg-3");
+
+  const cardLink = document.createElement("a");
+  cardLink.classList.add("link-light");
+  cardLink.href = `/listings/listing.html?id=${bid.listing.id}`;
+  cardContainer.appendChild(cardLink);
+
+  const card = document.createElement("div");
+  card.classList.add("card", "bg-light", "rounded", "shadow", "border-0");
+  cardLink.append(card);
+
+  const cardImage = document.createElement("img");
+  cardImage.classList.add("card-img-top", "mb-2", "card-image");
+  cardImage.alt = bid.listing.title;
+  const nonImageRegex =
+    /^(https:\/\/unsplash\.com.*)(?<!\.(jpg|jpeg|png|gif|bmp|svg))$/;
+  const noValidImage = nonImageRegex.test(bid.listing.media[0]);
+  if (bid.listing.media.length === 0 || noValidImage) {
+    cardImage.src = "https://fakeimg.pl/280x220?text=No image";
+  } else {
+    cardImage.src = bid.listing.media[0];
+  }
+  card.append(cardImage);
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("card-body");
+  card.append(cardBody);
+
+  const cardTitle = document.createElement("h3");
+  cardTitle.classList.add("card-title");
+  if (bid.listing.title.length > 20) {
+    cardTitle.innerText = bid.listing.title.slice(0, 20) + "...";
+  } else {
+    cardTitle.innerText = bid.listing.title;
+  }
+  cardBody.append(cardTitle);
+
+  const yourBid = document.createElement("p");
+  yourBid.classList.add("card-text", "mb-0");
+  yourBid.innerText = "Your Bid: ";
+  cardBody.append(yourBid);
+
+  const yourBidSpan = document.createElement("span");
+  yourBidSpan.classList.add("ms-2", "fw-bold");
+  yourBidSpan.innerText = `${bid.amount} credits`;
+  yourBid.append(yourBidSpan);
+
+  const listingEndsAt = document.createElement("p");
+  listingEndsAt.classList.add("card-text");
+  listingEndsAt.innerText = "Ending: ";
+  cardBody.append(listingEndsAt);
+
+  const listingEndsAtSpan = document.createElement("span");
+  listingEndsAtSpan.classList.add("ms-2", "fw-bold");
+  const endDate = new Date(bid.listing.endsAt).toLocaleDateString("no-NO", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+  const endTime = new Date(bid.listing.endsAt).toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+  listingEndsAtSpan.innerText = endDate + " - " + endTime;
+  listingEndsAt.append(listingEndsAtSpan);
+
+  parentElement.append(cardContainer);
 }
