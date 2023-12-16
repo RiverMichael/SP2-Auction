@@ -119,7 +119,7 @@ export function createListingDetailsHTML(listing, parentElement) {
   imagesContainer.id = "imagesContainer";
   imagesContainer.classList.add(
     "col-12",
-    "col-md",
+    "col-md-5",
     "d-flex",
     "flex-column",
     "gap-2",
@@ -176,7 +176,7 @@ export function createListingDetailsHTML(listing, parentElement) {
   const rightColumn = document.createElement("div");
   rightColumn.classList.add(
     "col-12",
-    "col-md-5",
+    "col-md-auto",
     "d-flex",
     "flex-column",
     "gap-5",
@@ -188,9 +188,32 @@ export function createListingDetailsHTML(listing, parentElement) {
   rightColumn.append(detailsContainer);
 
   const listingTitle = document.createElement("h1");
-  listingTitle.classList.add("text-secondary");
+  listingTitle.classList.add("text-secondary", "m-0");
   listingTitle.innerText = listing.title;
   detailsContainer.append(listingTitle);
+
+  const updateListingButtonContainer = document.createElement("div");
+  updateListingButtonContainer.classList.add("mb-2");
+  detailsContainer.append(updateListingButtonContainer);
+
+  const updateListingButton = document.createElement("button");
+  updateListingButton.type = "button";
+  updateListingButton.classList.add(
+    "btn",
+    "btn-sm",
+    "btn-dark",
+    "rounded-1",
+    "text-uppercase",
+    "collapsed",
+    "visually-hidden",
+  );
+  updateListingButton.id = "updateListingButton";
+  updateListingButton.setAttribute("data-bs-toggle", "collapse");
+  updateListingButton.setAttribute("data-bs-target", "#update-collapse");
+  updateListingButton.setAttribute("aria-expanded", "false");
+  updateListingButton.setAttribute("aria-controls", "update-collapse");
+  updateListingButton.innerText = "edit listing";
+  updateListingButtonContainer.append(updateListingButton);
 
   const currentBidContainer = document.createElement("div");
   currentBidContainer.classList.add("d-flex", "gap-2", "align-items-center");

@@ -167,34 +167,26 @@
         </div>
 
         <section
-          class="d-flex justify-content-center visually-hidden"
-          id="editListingContainer"
+          class="mt-2 mt-md-5 d-flex flex-column align-items-center"
+          id="listingDetailsContainer"
         >
-          <div class="accordion accordion-flush mb-4" id="accordionEditListing">
-            <div class="accordion-item">
-              <div class="accordion-header d-flex justify-content-center">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-outline-dark rounded-1 text-uppercase collapsed"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#edit-collapse"
-                  aria-expanded="false"
-                  area-controls="edit-collapse"
-                >
-                  edit listing
-                </button>
-              </div>
+          <span class="loader my-3"></span>
+        </section>
 
+        <section class="visually-hidden" id="updateListingContainer">
+          <div
+            class="row justify-content-center accordion accordion-flush mb-4"
+            id="accordionUpdateListing"
+          >
+            <div class="col col-md-8 col-lg-6 accordion-item">
               <div
                 class="accordion-collapse collapse"
-                id="edit-collapse"
-                data-bs-parent="accordionEditListing"
+                id="update-collapse"
+                data-bs-parent="accordionUpdateListing"
               >
                 <div class="accordion-body">
                   <form id="updateListingForm">
-                    <div
-                      class="d-flex flex-column gap-2 shadow border rounded p-4"
-                    >
+                    <div class="d-flex flex-column gap-2 border rounded p-4">
                       <h2 class="text-center">Edit listing</h2>
                       <div>
                         <label for="updateListingTitle" class="form-label mb-1"
@@ -246,7 +238,7 @@
                           type="url"
                           class="form-control mb-1"
                           id="updateListingImage"
-                          placeholder="https://"
+                          placeholder="https://example.com/image.jpg"
                         />
                         <button
                           type="button"
@@ -275,7 +267,7 @@
                               class="btn btn-sm btn-outline-danger border-0 fw-normal text-uppercase"
                               id="deleteListingButton"
                             >
-                              Delete listing
+                              delete listing
                             </button>
                           </div>
                         </div>
@@ -330,13 +322,6 @@
               </div>
             </div>
           </div>
-        </section>
-
-        <section
-          class="mt-2 mt-md-5 d-flex flex-column align-items-center"
-          id="listingDetailsContainer"
-        >
-          <span class="loader my-3"></span>
         </section>
       </div>
 

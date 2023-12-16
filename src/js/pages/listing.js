@@ -44,6 +44,16 @@ export async function displayListingDetails() {
     const updateListingForm = document.querySelector("#updateListingForm");
     updateListingForm.addEventListener("submit", onUpdateListingFormSubmit);
 
+    const updateListingButton = document.querySelector("#updateListingButton");
+    updateListingButton.addEventListener("click", () => {
+      setTimeout(() => {
+        updateListingForm.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 350);
+    });
+
     const deleteListingButton = document.querySelector("#deleteListingButton");
     deleteListingButton.addEventListener("click", handleDeleteListing);
 
