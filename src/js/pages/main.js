@@ -3,7 +3,6 @@ import { displayPopularListings } from "../components/displayPopularListings.js"
 import { displayNewListings } from "../components/displayNewListings.js";
 import { setSearchListeners } from "../utils/setSearchListeners.js";
 import { getListings } from "../utils/getListings.js";
-import { displayLoggedInMenu } from "../components/displayLoggedInMenu.js";
 
 async function main() {
   try {
@@ -14,7 +13,6 @@ async function main() {
     displayPopularListings();
     displayNewListings();
     setSearchListeners(listings, displaySearchContainer);
-    displayLoggedInMenu();
   } catch (error) {
     console.log(error);
   }

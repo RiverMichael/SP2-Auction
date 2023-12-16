@@ -1,4 +1,3 @@
-import { displayLoggedInMenu } from "../components/displayLoggedInMenu.js";
 import { getListings } from "../utils/getListings.js";
 import { setSearchListeners } from "../utils/setSearchListeners.js";
 import { renderListings } from "../components/render.js";
@@ -15,7 +14,6 @@ async function displayListings() {
     clearHTML(listingsFeedContainer);
     renderListings(listings, listingsFeedContainer);
     setSearchListeners(listings, searchContainer);
-    displayLoggedInMenu();
   } catch (error) {
     console.log(error);
     clearHTML(listingsFeedContainer);
