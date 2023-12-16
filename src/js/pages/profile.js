@@ -23,15 +23,22 @@ export async function displayProfile() {
     const profileDetails = await getProfileDetails(profileName);
     const profileListings = await getProfileListings(profileName);
     const profileBids = await getProfileBids(profileName);
-    const profileBidsDetails = profileBids.map(({ amount, listing }) => ({
-      amount,
-      listing,
-      listingEndsAt: new Date(listing.endsAt),
-    }));
-    const todaysDate = new Date();
-    const activeBidListings = profileBidsDetails.filter(
-      ({ listingEndsAt }) => listingEndsAt > todaysDate,
-    );
+
+    let activeBidListings = [];
+
+    if (profileBids.length > 0) {
+      const bidListings = profileBids.map(({ amount, listing }) => ({
+        amount,
+        listing,
+        listingEndsAt: new Date(listing.endsAt),
+      }));
+
+      const todaysDate = new Date();
+
+      activeBidListings = bidListings
+        .filter(({ listingEndsAt }) => listingEndsAt > todaysDate)
+        .sort((a, b) => a.listingEndsAt - b.listingEndsAt);
+    }
 
     document.title = `${profileName} | AuctionHub`;
 
