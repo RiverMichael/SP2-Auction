@@ -15,7 +15,7 @@ export async function onCreateNewListingFormSubmit(event) {
       showToast(addListingValidation);
       setTimeout(() => {
         window.location.href = "/listings/";
-      }, 2000);
+      }, 1000);
     } else {
       showToast(addListingValidationFailed);
     }
