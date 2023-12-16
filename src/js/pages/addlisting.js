@@ -1,4 +1,3 @@
-import { displayLoggedInMenu } from "../components/displayLoggedInMenu.js";
 import { onCreateNewListingFormSubmit } from "../utils/onCreateNewListingFormSubmit.js";
 import { createNewImageInput } from "../components/createHTML.js";
 
@@ -9,8 +8,6 @@ async function addListing() {
     "#addListingImageButton",
   );
   try {
-    displayLoggedInMenu();
-
     addListingImageButton.addEventListener("click", () =>
       createNewImageInput(addImagesContainer),
     );

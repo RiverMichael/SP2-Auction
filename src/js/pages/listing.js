@@ -1,6 +1,5 @@
 import { getListingDetails } from "../utils/getListingDetails.js";
 import { renderListingDetails } from "../components/render.js";
-import { displayLoggedInMenu } from "../components/displayLoggedInMenu.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { checkIfListingSellerIsUser } from "../utils/checkIfListingSellerIsUser.js";
 import { enableBidButton } from "../components/enableBidButton.js";
@@ -27,7 +26,6 @@ export async function displayListingDetails() {
 
     clearHTML(listingContainer);
     renderListingDetails(listing, listingContainer);
-    displayLoggedInMenu();
     enableBidButton();
     checkIfListingSellerIsUser(listing);
     displayAllBids();

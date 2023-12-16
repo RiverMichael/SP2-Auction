@@ -1,5 +1,4 @@
 import { createProfileDetailsHTML } from "../components/createHTML.js";
-import { displayLoggedInMenu } from "../components/displayLoggedInMenu.js";
 import { getProfileDetails } from "../utils/getProfileDetails.js";
 import { getProfileListings } from "../utils/getProfileListings.js";
 import { getProfileBids } from "../utils/getProfileBids.js";
@@ -42,7 +41,6 @@ export async function displayProfile() {
 
     document.title = `${profileName} | AuctionHub`;
 
-    displayLoggedInMenu();
     clearHTML(profileContainer);
     createProfileDetailsHTML(profileDetails, profileContainer);
     checkIfProfileIsUsersProfile();
