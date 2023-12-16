@@ -11,14 +11,10 @@ export async function displayPopularListings(numberOfListings = 4) {
   const listingsPopularContainer = document.querySelector("#listingsPopular");
 
   try {
-    const allListings = await getListings();
-    const arrayToSort = [...allListings];
+    const listings = await getListings();
+    const arrayToSort = [...listings];
     const listingsByNumberOfBids = arrayToSort
-      .sort((a, b) => {
-        const aBids = a.bids.length;
-        const bBids = b.bids.length;
-        return bBids - aBids;
-      })
+      .sort((a, b) => b.bids.length - a.bids.length)
       .slice(0, numberOfListings);
 
     clearHTML(listingsPopularContainer);

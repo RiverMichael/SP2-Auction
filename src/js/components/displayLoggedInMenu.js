@@ -8,6 +8,7 @@ import { getFromStorage } from "../utils/getFromStorage.js";
 export async function displayLoggedInMenu() {
   const loginRegisterButton = document.querySelector("#not-logged-in");
   const headerProfile = document.querySelector("#header-profile");
+  const myProfileLink = document.querySelectorAll(".my-profile-link");
   const addListingButton = document.querySelector("#add-listing-button");
   const profileMenu = document.querySelector("#nav-profile");
   const creditsContainer = document.querySelector("#creditsHeaderContainer");
@@ -22,6 +23,9 @@ export async function displayLoggedInMenu() {
       headerProfile.classList.remove("d-none");
       addListingButton.classList.remove("d-none");
       profileMenu.classList.remove("d-none");
+      myProfileLink.forEach((link) => {
+        link.href = `/profile/index.html?name=${userName}`;
+      });
     } else {
       loginRegisterButton.classList.remove("d-none");
       headerProfile.classList.add("d-none");

@@ -35,8 +35,7 @@ export async function handleRegisterUser(userDetails) {
       showToast(registrationValidation);
       setTimeout(() => {
         handleUserLogin(userDetails);
-        window.location.href = "/";
-      }, 2000);
+      }, 1000);
     } else {
       showToast(registrationValidationFailed);
     }
