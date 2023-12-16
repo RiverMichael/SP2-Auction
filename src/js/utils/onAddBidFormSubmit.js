@@ -20,7 +20,7 @@ export async function onAddBidFormSubmit(event) {
       setTimeout(() => {
         bidModal?.hide();
         displayListingDetails();
-      }, 2000);
+      }, 1000);
     } else {
       showToast(addBidValidationFailed);
     }

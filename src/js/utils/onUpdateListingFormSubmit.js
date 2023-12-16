@@ -20,7 +20,7 @@ export async function onUpdateListingFormSubmit(event) {
       setTimeout(() => {
         closeAccordion();
         displayListingDetails();
-      }, 2000);
+      }, 1000);
     } else {
       showToast(updateListingValidationFailed);
     }
