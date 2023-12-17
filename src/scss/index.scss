@@ -47,11 +47,22 @@
   transition: transform 0.25s ease-in-out;
 }
 
+.modal-image {
+  width: 100%;
+  height: auto;
+  object-position: center;
+  object-fit: cover;
+}
+
 .profile-avatar {
   width: 150px;
   height: 150px;
   object-position: center;
   object-fit: cover;
+}
+
+#listingDescription {
+  max-width: 400px;
 }
 
 // Footer

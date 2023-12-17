@@ -333,7 +333,9 @@
         aria-labelledby="imageModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div
+          class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+        >
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="visually-hidden" id="imageModalLabel">Image modal</h1>
@@ -346,7 +348,7 @@
             </div>
 
             <div class="modal-body p-0">
-              <img src="" alt="" class="img-fluid" id="modalImage" />
+              <img src="" alt="" class="modal-image" id="modalImage" />
             </div>
           </div>
         </div>
@@ -523,7 +525,7 @@
         <div
           class="col fw-bold d-flex gap-3 text-uppercase fw-bold justify-content-center justify-content-md-end align-items-center"
         >
-          <a href="/" class="link-light link-underline-opacity-0">home</a>
+          <a href="/" class="link-light link-offset-2">home</a>
           <a href="/about/" class="link-light link-offset-2">about</a>
           <a href="/contact/" class="link-light link-offset-2">contact</a>
         </div>

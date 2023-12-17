@@ -1,25 +1,8 @@
 import { handleCreateNewListing } from "./handleCreateNewListing.js";
-import { showToast } from "../components/showToast.js";
+import { createNewListing } from "./createNewListing.js";
 
-export async function onCreateNewListingFormSubmit(event) {
+export function onCreateNewListingFormSubmit(event) {
   event.preventDefault();
-  const addListingValidation = document.querySelector("#addListingValidation");
-  const addListingValidationFailed = document.querySelector(
-    "#addListingValidationFailed",
-  );
-
-  try {
-    const createNewListing = await handleCreateNewListing();
-
-    if (createNewListing) {
-      showToast(addListingValidation);
-      setTimeout(() => {
-        window.location.href = "/listings/";
-      }, 1000);
-    } else {
-      showToast(addListingValidationFailed);
-    }
-  } catch (error) {
-    console.log(error);
-  }
+  const listingDetails = createNewListing();
+  handleCreateNewListing(listingDetails);
 }

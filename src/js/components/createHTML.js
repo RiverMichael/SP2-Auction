@@ -455,6 +455,7 @@ export function createListingDetailsHTML(listing, parentElement) {
   descriptionContainer.append(descriptionTitle);
 
   const listingDescription = document.createElement("p");
+  listingDescription.id = "listingDescription";
   if (listing.description) {
     listingDescription.innerText = listing.description;
   } else {

@@ -1,4 +1,6 @@
 import { onRegisterFormSubmit } from "../utils/onRegisterFormSubmit.js";
+import { bootstrapFormValidation } from "../components/bootstrapFormValidation.js";
+
 /**
  * Sets up the register form submit event listener.
  */
@@ -9,5 +11,7 @@ function register() {
   cancelButton.addEventListener("click", function () {
     history.back();
   });
+
+  bootstrapFormValidation();
 }
 register();
