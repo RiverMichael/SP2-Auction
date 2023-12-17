@@ -6,8 +6,6 @@ export async function getUserCredits() {
     const user = getFromStorage("name");
     const profile = await getProfileDetails(user);
 
-    console.log(profile);
-
     return profile.credits;
   } catch (error) {
     console.log(error);
