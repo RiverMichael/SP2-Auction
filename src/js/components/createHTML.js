@@ -564,7 +564,8 @@ export function createProfileDetailsHTML(profileDetails, parentElement) {
   profile.classList.add(
     "row",
     "align-items-center",
-    "justify-content-start",
+    "justify-content-center",
+    "justify-content-sm-start",
     "py-4",
     "border-bottom",
     "border-secondary",
@@ -573,7 +574,8 @@ export function createProfileDetailsHTML(profileDetails, parentElement) {
 
   const profileAvatarContainer = document.createElement("div");
   profileAvatarContainer.classList.add(
-    "col-auto",
+    "col-12",
+    "col-sm-auto",
     "d-flex",
     "flex-column",
     "align-items-center",
@@ -614,10 +616,12 @@ export function createProfileDetailsHTML(profileDetails, parentElement) {
 
   const profileDetailsContainer = document.createElement("div");
   profileDetailsContainer.classList.add(
-    "col-auto",
+    "col-12",
+    "col-sm-auto",
     "d-flex",
     "flex-column",
-    "align-items-start",
+    "align-items-center",
+    "align-items-sm-start",
   );
   profile.append(profileDetailsContainer);
 
