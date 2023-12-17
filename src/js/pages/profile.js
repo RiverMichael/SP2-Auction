@@ -9,6 +9,14 @@ import { renderListings, renderProfileBidCard } from "../components/render.js";
 import { createMessage } from "../components/createMessage.js";
 import { onChangeAvatarFormSubmit } from "../utils/onCreateNewAvatarFormSubmit.js";
 
+/**
+ * Fetches and displays the profile a user.
+ * It fetches the profile details, listings, and active bids from the API, and then renders them.
+ * @example
+ * ```js
+ * displayProfile();
+ * ```
+ */
 export async function displayProfile() {
   try {
     const profileContainer = document.querySelector("#profileContainer");

@@ -5,6 +5,18 @@ import { showToast } from "../components/showToast.js";
 import { displayListingDetails } from "../pages/listing.js";
 import { closeAccordion } from "../components/closeAccordion.js";
 
+/**
+ * Handles the updating of a listing.
+ * If the listing is successfully updated, it shows a toast message and then closes the accordion and refreshes the listing details after 1 second.
+ * If the listing update fails, it shows a different toast message.
+ * @param {Object} listingDetails - The details of the listing to be updated.
+ * @throws {Error} Will throw an error if the fetch operation fails.
+ * @example
+ * ```js
+ * const listingDetails = { id: 1, title: "Updated Listing", description: "This is an updated listing." };
+ * handleUpdateListing(listingDetails);
+ * ```
+ */
 export async function handleUpdateListing(listingDetails) {
   const updateListingValidation = document.querySelector(
     "#updateListingValidation",

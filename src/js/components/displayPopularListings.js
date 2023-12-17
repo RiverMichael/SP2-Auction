@@ -4,8 +4,12 @@ import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 
 /**
- * Displays the listings with most bids.
+ * Displays the listings with the most bids.
  * @param {Number} numberOfListings - The number of listings to display. Defaults to 4.
+ * @example
+ * ```js
+ * displayPopularListings(5);
+ * ```
  */
 export async function displayPopularListings(numberOfListings = 4) {
   const listingsPopularContainer = document.querySelector("#listingsPopular");

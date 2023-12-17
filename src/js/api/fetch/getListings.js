@@ -3,10 +3,11 @@ import { getData } from "../fetchOptions.js";
 import { allListingsURL } from "../constants.js";
 
 /**
- * Fetches an array of listings from the API. Default is 300 listings.
- * @param {Number} numberOfListings  - The number of listings to fetch.
- * @param {Number} excludeListings - The number of listings to exclude.
- * @returns {Promise<Array>} - An array of listings.
+ * Fetches an array of listings from the API.
+ * The default number is 300 listings.
+ * @param {Number} numberOfListings  - The number of listings to fetch. Defaults to 300.
+ * @param {Number} excludeListings - The number of listings to exclude. Defaults to 0.
+ * @returns {Promise<Array>} - Returns a Promise that resolves to an array of listings.
  * @example
  * ```js
  *  const numberOfListings = 100;

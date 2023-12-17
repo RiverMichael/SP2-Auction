@@ -6,6 +6,10 @@ import { createMessage } from "../components/createMessage.js";
 /**
  * Displays the newest listings.
  * @param {Number} numberOfListings - The number of listings to display. Defaults to 4.
+ * @example
+ * ```js
+ * displayNewListings(5);
+ * ```
  */
 export async function displayNewListings(numberOfListings = 4) {
   const listingsNewContainer = document.querySelector("#listingsNew");

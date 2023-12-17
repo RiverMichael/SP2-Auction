@@ -14,6 +14,15 @@ import { handleDeleteListing } from "../handlers/handleDeleteListing.js";
 import { displaySellerDetails } from "../components/displaySellerDetails.js";
 import { checkIfLoggedIn } from "../utils/checkIfLoggedIn.js";
 
+/**
+ * Displays the details of a listing.
+ * It fetches the listing details, clears the listing container, and then renders the listing details.
+ * If the user is logged in, it fetches the user's credits, creates the bid form modal HTML, enables the bid button, displays all bids, displays the seller details, checks if the listing seller is the user, and adds event listeners to the "Add Bid" form, "Update Listing" form, and "Update Listing" button.
+ * @example
+ * ```js
+ * displayListingDetails();
+ * ```
+ */
 export async function displayListingDetails() {
   const listingContainer = document.querySelector("#listingDetailsContainer");
   const imageModal = document.querySelector("#modalImage");
