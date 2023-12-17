@@ -1,4 +1,4 @@
-import { handleCreateNewListing } from "./handleCreateNewListing.js";
+import { handleCreateNewListing } from "../handlers/handleCreateNewListing.js";
 import { createNewListing } from "./createNewListing.js";
 
 export function onCreateNewListingFormSubmit(event) {

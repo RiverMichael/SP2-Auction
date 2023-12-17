@@ -1,6 +1,6 @@
 import { checkIfLoggedIn } from "../utils/checkIfLoggedIn.js";
-import { getUserCredits } from "../utils/getUserCredits.js";
-import { getFromStorage } from "../utils/getFromStorage.js";
+import { getUserCredits } from "../api/fetch/getUserCredits.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 
 /**
  * Changes the navigation menu depending on if the user is logged in or not.

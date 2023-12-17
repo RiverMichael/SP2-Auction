@@ -1,4 +1,4 @@
-import { handleOnSearch } from "./handleOnSearch.js";
+import { handleOnSearch } from "../handlers/handleOnSearch.js";
 import { clearHTML } from "../components/clearHTML.js";
 
 export function setSearchListeners(listings, parentElement) {

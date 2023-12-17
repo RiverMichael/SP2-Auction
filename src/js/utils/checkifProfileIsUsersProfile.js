@@ -1,4 +1,4 @@
-import { getFromStorage } from "./getFromStorage.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 import { getProfileName } from "./getProfileName.js";
 
 export function checkIfProfileIsUsersProfile() {

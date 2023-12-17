@@ -1,5 +1,5 @@
 import { displayListingUpdateForm } from "../components/displayListingUpdateForm.js";
-import { getFromStorage } from "./getFromStorage.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 
 export function checkIfListingSellerIsUser(listing) {
   const listingSeller = listing.seller.name;

@@ -1,4 +1,4 @@
-import { getFromStorage } from "./getFromStorage.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 
 export function getProfileName() {
   const queryString = document.location.search;

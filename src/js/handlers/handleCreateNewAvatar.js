@@ -1,7 +1,7 @@
 import { profilesURL } from "../api/constants.js";
 import { doFetch } from "../api/doFetch.js";
 import { putData } from "../api/fetchOptions.js";
-import { getProfileName } from "./getProfileName.js";
+import { getProfileName } from "../utils/getProfileName.js";
 import { showToast } from "../components/showToast.js";
 import { displayProfile } from "../pages/profile.js";
 

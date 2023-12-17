@@ -1,7 +1,7 @@
 import { createProfileDetailsHTML } from "../components/createHTML.js";
-import { getProfileDetails } from "../utils/getProfileDetails.js";
-import { getProfileListings } from "../utils/getProfileListings.js";
-import { getProfileBids } from "../utils/getProfileBids.js";
+import { getProfileDetails } from "../api/fetch/getProfileDetails.js";
+import { getProfileListings } from "../api/fetch/getProfileListings.js";
+import { getProfileBids } from "../api/fetch/getProfileBids.js";
 import { getProfileName } from "../utils/getProfileName.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { checkIfProfileIsUsersProfile } from "../utils/checkifProfileIsUsersProfile.js";

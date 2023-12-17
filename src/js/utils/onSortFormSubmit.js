@@ -1,4 +1,4 @@
-import { handleSortForm } from "./handleSortForm.js";
+import { handleSortForm } from "../handlers/handleSortForm.js";
 
 export function onSortFormSubmit(sortList, parentElement) {
   const sortForm = document.querySelector("#sortForm");

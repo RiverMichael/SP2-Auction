@@ -1,4 +1,4 @@
-import { handleUpdateListing } from "./handleUpdateListing.js";
+import { handleUpdateListing } from "../handlers/handleUpdateListing.js";
 import { createUpdatedListing } from "./createUpdatedListing.js";
 
 export function onUpdateListingFormSubmit(event) {

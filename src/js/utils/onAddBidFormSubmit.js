@@ -1,4 +1,4 @@
-import { handleCreateNewBid } from "./handleCreateNewBid.js";
+import { handleCreateNewBid } from "../handlers/handleCreateNewBid.js";
 import { createNewBid } from "./createNewBid.js";
 
 export function onAddBidFormSubmit(event) {

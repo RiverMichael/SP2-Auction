@@ -1,4 +1,4 @@
-import { getListings } from "../utils/getListings.js";
+import { getListings } from "../api/fetch/getListings.js";
 import { setSearchListeners } from "../utils/setSearchListeners.js";
 import { renderListings } from "../components/render.js";
 import { clearHTML } from "../components/clearHTML.js";

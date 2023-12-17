@@ -1,5 +1,5 @@
 import { renderListings } from "../components/render.js";
-import { getListings } from "../utils/getListings.js";
+import { getListings } from "../api/fetch/getListings.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 

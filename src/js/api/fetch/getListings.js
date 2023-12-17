@@ -1,6 +1,6 @@
-import { doFetch } from "../api/doFetch.js";
-import { getData } from "../api/fetchOptions.js";
-import { allListingsURL } from "../api/constants.js";
+import { doFetch } from "../doFetch.js";
+import { getData } from "../fetchOptions.js";
+import { allListingsURL } from "../constants.js";
 
 /**
  * Fetches an array of listings from the API. Default is 300 listings.

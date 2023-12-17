@@ -1,4 +1,4 @@
-import { deleteListing } from "./deleteListing.js";
+import { deleteListing } from "../api/fetch/deleteListing.js";
 
 export function handleDeleteListing() {
   const userPrompt = window.confirm(

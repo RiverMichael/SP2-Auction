@@ -1,4 +1,4 @@
-import { getFromStorage } from "./getFromStorage.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 
 /**
  * Checks if the user is logged in.

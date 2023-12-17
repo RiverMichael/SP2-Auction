@@ -2,7 +2,7 @@ import { displayEndingListings } from "../components/displayEndingListings.js";
 import { displayPopularListings } from "../components/displayPopularListings.js";
 import { displayNewListings } from "../components/displayNewListings.js";
 import { setSearchListeners } from "../utils/setSearchListeners.js";
-import { getListings } from "../utils/getListings.js";
+import { getListings } from "../api/fetch/getListings.js";
 
 async function main() {
   try {

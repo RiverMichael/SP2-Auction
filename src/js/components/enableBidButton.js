@@ -1,4 +1,4 @@
-import { getFromStorage } from "../utils/getFromStorage.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 
 export function enableBidButton() {
   const isUserLoggedIn = getFromStorage("accessToken");

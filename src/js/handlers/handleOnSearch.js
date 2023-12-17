@@ -1,4 +1,4 @@
-import { filterListingsOnSearch } from "./filterListingsOnSearch.js";
+import { filterListingsOnSearch } from "../utils/filterListingsOnSearch.js";
 import { displayFilteredListings } from "../components/displayFilteredListings.js";
 
 export function handleOnSearch(listings, term, parentElement) {

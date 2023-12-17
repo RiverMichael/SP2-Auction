@@ -1,4 +1,4 @@
-import { handleUserLogin } from "./handleUserLogin.js";
+import { handleUserLogin } from "../handlers/handleUserLogin.js";
 import { createUser } from "./createUser.js";
 
 /**

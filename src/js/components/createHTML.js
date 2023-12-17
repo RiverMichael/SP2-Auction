@@ -415,10 +415,21 @@ export function createListingDetailsHTML(listing, parentElement) {
   sellerContainer.append(seller);
 
   const sellerLink = document.createElement("a");
-  sellerLink.classList.add("link-underline-secondary", "link-offset-2");
+  sellerLink.id = "sellerDetailsLink";
+  sellerLink.classList.add(
+    "link-underline-secondary",
+    "link-offset-2",
+    "d-none",
+  );
   sellerLink.href = `/profile/index.html?name=${listing.seller.name}`;
   sellerLink.innerText = listing.seller.name;
   sellerContainer.append(sellerLink);
+
+  const sellerSpan = document.createElement("span");
+  sellerSpan.id = "sellerDetailsText";
+  sellerSpan.classList.add("fw-normal", "mb-0");
+  sellerSpan.innerText = listing.seller.name;
+  sellerContainer.append(sellerSpan);
 
   const addBidButtonContainer = document.createElement("div");
   addBidButtonContainer.classList.add("mt-3");
