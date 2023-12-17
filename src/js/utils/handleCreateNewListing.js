@@ -1,13 +1,26 @@
 import { listingsURL } from "../api/constants.js";
-import { createNewListing } from "./createNewListing.js";
 import { doFetch } from "../api/doFetch.js";
 import { postData } from "../api/fetchOptions.js";
+import { showToast } from "../components/showToast.js";
 
-export async function handleCreateNewListing() {
+export async function handleCreateNewListing(listingDetails) {
+  const addListingValidation = document.querySelector("#addListingValidation");
+  const addListingValidationFailed = document.querySelector(
+    "#addListingValidationFailed",
+  );
+
   try {
-    const listingDetails = createNewListing();
     const options = postData(listingDetails);
-    return await doFetch(listingsURL, options);
+    const result = await doFetch(listingsURL, options);
+
+    if (result.id) {
+      showToast(addListingValidation);
+      setTimeout(() => {
+        window.location.href = "/listings/";
+      }, 1000);
+    } else {
+      showToast(addListingValidationFailed);
+    }
   } catch (error) {
     console.log(error);
     throw new Error("Error adding listing");

@@ -20,7 +20,6 @@ import { showToast } from "../components/showToast.js";
 export async function handleUserLogin(userDetails) {
   const loginValidation = document.querySelector("#loginValidation");
   const loginFailed = document.querySelector("#loginValidationFailed");
-  const loginForm = document.querySelector("#formLogin");
 
   try {
     const options = postData(userDetails);
@@ -37,7 +36,6 @@ export async function handleUserLogin(userDetails) {
       }, 1000);
     } else {
       showToast(loginFailed);
-      loginForm.reset();
     }
   } catch (error) {
     console.log(error);
