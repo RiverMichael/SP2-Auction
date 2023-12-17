@@ -31,7 +31,10 @@ export async function getListings(numberOfListings = 300, excludeListings = 0) {
         (listing) =>
           !listing.title.toLowerCase().includes("test") &&
           !listing.seller.name.match("Travis_Scott") &&
-          !listing.seller.name.match("RandomUser_5375304"),
+          !listing.seller.name.match("RandomUser_5375304") &&
+          !listing.seller.name.match("babee6") &&
+          !listing.seller.name.match("yen") &&
+          !listing.seller.name.match("nugget"),
       );
 
       allListingsArray = [...allListingsArray, ...filteredListings];

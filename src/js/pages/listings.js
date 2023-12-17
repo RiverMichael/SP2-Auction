@@ -3,6 +3,7 @@ import { setSearchListeners } from "../utils/setSearchListeners.js";
 import { renderListings } from "../components/render.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
+import { onSortFormSubmit } from "../utils/onSortFormSubmit.js";
 
 async function displayListings() {
   const listingsFeedContainer = document.querySelector("#allListings");
@@ -14,6 +15,7 @@ async function displayListings() {
     clearHTML(listingsFeedContainer);
     renderListings(listings, listingsFeedContainer);
     setSearchListeners(listings, searchContainer);
+    onSortFormSubmit(listings, listingsFeedContainer);
   } catch (error) {
     console.log(error);
     clearHTML(listingsFeedContainer);
