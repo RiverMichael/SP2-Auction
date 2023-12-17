@@ -13,6 +13,7 @@ export async function displayLoggedInMenu() {
   const profileMenu = document.querySelector("#nav-profile");
   const creditsContainer = document.querySelector("#creditsHeaderContainer");
   const userName = getFromStorage("name");
+
   try {
     const isUserLoggedIn = checkIfLoggedIn();
     if (isUserLoggedIn) {

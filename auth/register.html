@@ -62,6 +62,7 @@
                 class="form-control"
                 id="registerUsername"
                 placeholder="Username"
+                pattern="^[a-zA-Z0-9_]+$"
                 required
               />
               <div class="form-text" id="registerNameHelp">
@@ -80,10 +81,11 @@
                 class="form-control"
                 id="registerEmail"
                 placeholder="user@stud.noroff.no"
+                pattern="^[a-zA-Z0-9._]+@stud\.noroff\.no$"
                 required
               />
               <div class="form-text" id="registerEmailHelp">
-                Email must end with @stud.noroff.no
+                Email can use a-Z, 0-9, ._ and must end with @stud.noroff.no
               </div>
               <div class="invalid-feedback alert alert-danger py-1">
                 Please enter a valid email
