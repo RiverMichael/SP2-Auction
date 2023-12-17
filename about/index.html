@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="View this users profile on AuctionHub" />
+    <meta name="description" content="Learn more about AuctionHub" />
 
-    <title></title>
+    <title>About us | AuctionHub</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +34,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="module" src="../src/js/pages/profile.js" defer></script>
     <script type="module" src="../src/js/common.js" defer></script>
   </head>
   <body class="min-vh-100 d-flex flex-column bg-white text-black">
@@ -154,192 +153,56 @@
       </nav>
     </header>
 
-    <main>
-      <div
-        class="container d-flex flex-column py-2 py-sm-3 py-md-5"
-        id="profileContainer"
-      >
-        <div class="d-flex justify-content-center">
-          <div class="loader my-3"></div>
-        </div>
-      </div>
-
-      <div class="container py-2 my-sm-3 py-md-5">
-        <ul class="nav nav-tabs mb-3" id="listingsTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link active"
-              id="listings-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#listingsTabContainer"
-              type="button"
-              role="tab"
-              aria-controls="listingsTabContainer"
-              aria-selected="true"
-            >
-              Listings
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="activeBids-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#activeBidsTabContainer"
-              type="button"
-              role="tab"
-              aria-controls="activeBidsTabContainer"
-              aria-selected="false"
-            >
-              Active bids
-            </button>
-          </li>
-        </ul>
-
-        <div class="tab-content" id="myTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="listingsTabContainer"
-            role="tabpanel"
-            aria-labelledby="listingsTabContainer"
-          >
-            <div
-              class="row row-gap-4 justify-content-start"
-              id="profileListingsContainer"
-            >
-              <div class="d-flex justify-content-center">
-                <div class="loader my-3"></div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="tab-pane fade"
-            id="activeBidsTabContainer"
-            role="tabpanel"
-            aria-labelledby="list2-tab"
-          >
-            <div
-              class="row row-gap-4 justify-content-start"
-              id="profileActiveBidsContainer"
-            >
-              <div class="d-flex justify-content-center">
-                <div class="loader my-3"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="modal"
-        id="changeAvatarModal"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="changeAvatarModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content bg-light">
-            <div class="modal-header">
-              <h1 class="" id="changeAvatarModalLabel">Change avatar</h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-
-            <div class="modal-body">
-              <div class="container">
-                <form
-                  class="needs-validation mb-3"
-                  id="changeAvatarForm"
-                  novalidate
-                >
-                  <label for="changeAvatar" class="form-label mb-1"
-                    ><i class="bi bi-images"></i> Profile avatar URL
-                  </label>
-
-                  <input
-                    type="URL"
-                    class="form-control"
-                    id="changeAvatar"
-                    name="changeAvatar"
-                    placeholder="https://example.com/image.jpg"
-                    required
-                  />
-                  <div class="form-text" id="changeAvatarHelp">
-                    Avatar must be a valid URL
-                  </div>
-                  <div class="invalid-feedback alert alert-danger py-1">
-                    Please enter a valid url
-                  </div>
-                  <div class="d-flex justify-content-center gap-3 my-4">
-                    <button
-                      type="submit"
-                      class="btn btn-sm btn-primary rounded-1 text-uppercase px-4"
-                    >
-                      update avatar
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-sm btn-outline-dark rounded-1 text-uppercase border"
-                      data-bs-dismiss="modal"
-                    >
-                      cancel
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
-        <div
-          class="toast bg-success"
-          id="avatarUpdateValidation"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
+    <main class="container">
+      <div class="row justify-content-center align-items-center my-5">
+        <article
+          class="col col-md-10 col-lg-8 col-xl-6 d-flex flex-column py-2 py-sm-3 py-md-5 gap-4"
         >
-          <div class="toast-header bg-success text-light">
-            <h5 class="my-0">Avatar update successful!</h5>
-            <button
-              class="btn-close btn-close-white ms-auto"
-              data-bs-dismiss="toast"
-              aria-label="Close"
-            ></button>
+          <div class="border-bottom border-secondary border-5">
+            <h1 class="text-secondary mb-0">About us</h1>
           </div>
-          <div class="toast-body text-light fs-6">
-            Your avatar has been updated.
-          </div>
-        </div>
-      </div>
 
-      <div class="toast-container position-fixed mt-2 top-0 end-0 p-3">
-        <div
-          class="toast bg-danger"
-          id="avatarUpdateValidationFailed"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          <div class="toast-header bg-danger text-light">
-            <h5 class="my-0">Avatar update failed!</h5>
-            <button
-              class="btn-close btn-close-white ms-auto"
-              data-bs-dismiss="toast"
-              aria-label="Close"
-            ></button>
+          <div>
+            <p>
+              At AuctionHub, we believe that every bid holds the promise of a
+              new story. Founded 2023, we have rapidly grown into a vibrant
+              community of buyers and sellers, united by a passion for unique
+              finds and fair, exciting bidding wars.
+            </p>
+
+            <p>
+              Our platform is more than just an auction site; it's a place where
+              rare treasures, everyday essentials, and quirky collectibles find
+              their perfect match.
+            </p>
           </div>
-          <div class="toast-body text-light fs-6">
-            Your avatar was not updated, please try again!
+
+          <div>
+            <h2>Our mission</h2>
+            <p>
+              Our mission is simple yet ambitious: to revolutionize the online
+              auction experience. We strive to create a space that is not only
+              user-friendly but also thrilling and transparent. Whether you are
+              a seasoned collector or a first-time bidder, AuctionHub offers a
+              seamless and engaging experience. We are committed to providing a
+              diverse array of items, ensuring that there is always something
+              for everyone.
+            </p>
           </div>
-        </div>
+
+          <div>
+            <h2>Our vision for the future</h2>
+            <p>
+              Looking ahead, we aim to expand our reach, diversify our
+              offerings, and continue innovating to enhance your online
+              auctioning experience. With AuctionHub, the future of online
+              auctions looks bright, and we're excited to have you be a part of
+              our journey.
+            </p>
+
+            <p>Welcome aboard, and happy bidding!</p>
+          </div>
+        </article>
       </div>
     </main>
 
@@ -401,7 +264,7 @@
           class="col fw-bold d-flex gap-3 text-uppercase fw-bold justify-content-center justify-content-md-end align-items-center"
         >
           <a href="/" class="link-light link-offset-2">home</a>
-          <a href="/about/" class="link-light link-offset-2">about</a>
+          <a href="#" class="link-primary link-underline-opacity-0">about</a>
           <a href="/contact/" class="link-light link-offset-2">contact</a>
         </div>
       </div>
