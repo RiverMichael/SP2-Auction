@@ -1,6 +1,6 @@
 import { doFetch } from "../api/doFetch.js";
 import { authURL } from "../api/constants.js";
-import { saveToStorage } from "./saveToStorage.js";
+import { saveToStorage } from "../storage/saveToStorage.js";
 import { postData } from "../api/fetchOptions.js";
 import { showToast } from "../components/showToast.js";
 

@@ -415,10 +415,21 @@ export function createListingDetailsHTML(listing, parentElement) {
   sellerContainer.append(seller);
 
   const sellerLink = document.createElement("a");
-  sellerLink.classList.add("link-underline-secondary", "link-offset-2");
+  sellerLink.id = "sellerDetailsLink";
+  sellerLink.classList.add(
+    "link-underline-secondary",
+    "link-offset-2",
+    "d-none",
+  );
   sellerLink.href = `/profile/index.html?name=${listing.seller.name}`;
   sellerLink.innerText = listing.seller.name;
   sellerContainer.append(sellerLink);
+
+  const sellerSpan = document.createElement("span");
+  sellerSpan.id = "sellerDetailsText";
+  sellerSpan.classList.add("fw-normal", "mb-0");
+  sellerSpan.innerText = listing.seller.name;
+  sellerContainer.append(sellerSpan);
 
   const addBidButtonContainer = document.createElement("div");
   addBidButtonContainer.classList.add("mt-3");
@@ -466,6 +477,25 @@ export function createListingDetailsHTML(listing, parentElement) {
   parentElement.append(listingContainer);
 }
 
+/**
+ * Creates HTML for a bid form modal and appends it to the modalTitleContainer and modalDetailsContainer.
+ * @param {object} listing - The listing object.
+ * @param {number} credits - The number of credits the user has.
+ * @param {HTMLElement} modalTitleContainer - The container for the modal title.
+ * @param {HTMLElement} modalDetailsContainer - The container for the modal details.
+ * @example
+ * ```js
+ * const listing = {
+ *  id: 1,
+ *  title: "Listing Title",
+ * };
+ *
+ * const credits = 500;
+ * const modalTitleContainer = document.querySelector(".modal-title");
+ * const modalDetailsContainer = document.querySelector(".modal-details");
+ * createBidFormModalHTML(listing, credits, modalTitleContainer, modalDetailsContainer);
+ * ```
+ */
 export function createBidFormModalHTML(
   listing,
   credits,
@@ -514,6 +544,21 @@ export function createNewImageInput(parentElement) {
   parentElement.appendChild(newImageInput).after(addImageButton);
 }
 
+/**
+ * Creates HTML for a user's profile details and appends it to the profileContainer.
+ * @param {object} profile - The profile object.
+ * @param {HTMLElement} profileContainer - The container for the profile details.
+ * @example
+ * ```js
+ * const profile = {
+ *  name: "John Doe",
+ *  credits: 500,
+ * };
+ *
+ * const profileContainer = document.querySelector(".profile-container");
+ * createProfileDetailsHTML(profile, profileContainer);
+ * ```
+ */
 export function createProfileDetailsHTML(profileDetails, parentElement) {
   const profile = document.createElement("section");
   profile.classList.add(
@@ -595,6 +640,22 @@ export function createProfileDetailsHTML(profileDetails, parentElement) {
   parentElement.append(profile);
 }
 
+/**
+ * Creates HTML for a bid card in the user's profile and appends it to the parentElement.
+ * @param {object} bid - The bid object.
+ * @param {HTMLElement} parentElement - The parent element to append the bid card to.
+ * @example
+ * ```js
+ * const bid = {
+ *  id: 1,
+ *  amount: 100,
+ *  listing: { title: "Listing Title" },
+ * };
+ *
+ * const parentElement = document.querySelector(".bids-container");
+ * createProfileBidCardHTML(bid, parentElement);
+ * ```
+ */
 export function createProfileBidCardHTML(bid, parentElement) {
   const cardContainer = document.createElement("div");
   cardContainer.classList.add("col-12", "col-sm-6", "col-lg-3");

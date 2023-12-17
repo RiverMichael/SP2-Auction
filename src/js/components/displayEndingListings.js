@@ -1,11 +1,15 @@
 import { renderListings } from "../components/render.js";
-import { getListings } from "../utils/getListings.js";
+import { getListings } from "../api/fetch/getListings.js";
 import { clearHTML } from "../components/clearHTML.js";
 import { createMessage } from "../components/createMessage.js";
 
 /**
- * Displays the listings with nearest end date and time.
- * @param {Number} numberOfListings - The number of listings to display. Defaults to 4.
+ * Displays the listings with the nearest end date and time.
+ * @param {number} [numberOfListings=4] - The number of listings to display. Defaults to 4.
+ * @example
+ * ```js
+ * displayEndingListings(5);
+ * ```
  */
 export async function displayEndingListings(numberOfListings = 4) {
   const listingsEndingContainer = document.querySelector("#listingsEnding");

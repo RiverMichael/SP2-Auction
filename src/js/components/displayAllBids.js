@@ -1,5 +1,13 @@
-import { getFromStorage } from "../utils/getFromStorage.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 
+/**
+ * Displays all bids if the user is logged in, otherwise displays a message.
+ * The function checks if an access token is stored to determine if the user is logged in.
+ * @example
+ * ```js
+ * displayAllBids();
+ * ```
+ */
 export function displayAllBids() {
   const isUserLoggedIn = getFromStorage("accessToken");
   const allBidsText = document.querySelector("#allBidsText");

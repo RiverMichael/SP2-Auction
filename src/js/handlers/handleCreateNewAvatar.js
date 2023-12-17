@@ -1,10 +1,22 @@
 import { profilesURL } from "../api/constants.js";
 import { doFetch } from "../api/doFetch.js";
 import { putData } from "../api/fetchOptions.js";
-import { getProfileName } from "./getProfileName.js";
+import { getProfileName } from "../utils/getProfileName.js";
 import { showToast } from "../components/showToast.js";
 import { displayProfile } from "../pages/profile.js";
 
+/**
+ * Handles the creation of a new avatar.
+ * If the avatar is successfully updated, it shows a toast message and then hides the modal and refreshes the profile page after 1 second.
+ * If the avatar update fails, it shows a different toast message.
+ * @param {Object} avatar - The new avatar to be created.
+ * @throws {Error} Will throw an error if the fetch operation fails.
+ * @example
+ * ```js
+ * const avatar = { id: 1, url: "avatar.png" };
+ * handleCreateNewAvatar(avatar);
+ * ```
+ */
 export async function handleCreateNewAvatar(avatar) {
   const avatarUpdateValidation = document.querySelector(
     "#avatarUpdateValidation",

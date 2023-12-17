@@ -1,9 +1,16 @@
 import { checkIfLoggedIn } from "../utils/checkIfLoggedIn.js";
-import { getUserCredits } from "../utils/getUserCredits.js";
-import { getFromStorage } from "../utils/getFromStorage.js";
+import { getUserCredits } from "../api/fetch/getUserCredits.js";
+import { getFromStorage } from "../storage/getFromStorage.js";
 
 /**
  * Changes the navigation menu depending on if the user is logged in or not.
+ * If the user is logged in, it displays the user's credits, hides the login/register button,
+ * and shows the profile menu and add listing buttons. If the user is not logged in, it hides the profile
+ * menu and add listing buttons and shows the login/register button.
+ * @example
+ * ```js
+ * displayLoggedInMenu();
+ * ```
  */
 export async function displayLoggedInMenu() {
   const loginRegisterButton = document.querySelector("#not-logged-in");
