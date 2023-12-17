@@ -51,7 +51,7 @@
 
 This is my project for the Semester Project 2 at [Noroff][noroff-url]. The assignment was to create an auction website where users can add items to be bid on and bid on items other users have put up for auction.
 
-The implementation was done using the auction API, provided from [Noroff][noroff-url].
+The implementation was done using the Auction API, provided from [Noroff][noroff-url].
 
 ### Built With
 
