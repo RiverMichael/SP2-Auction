@@ -8,7 +8,7 @@
   </a>
 
 <h3>Semester Project 2 (SP2) - AuctionHub</h3>
-<p>A fictional auction website built with JavaScript, Bootstrap and the Noroff API.</p>
+<p><i>A fictional auction website built with JavaScript, Bootstrap and the Noroff API.</i></p>
 
 [Link to project][github-repo] - [Link to live site][live-site]
 
