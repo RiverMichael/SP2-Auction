@@ -8,7 +8,7 @@
   </a>
 
 <h3>Semester Project 2 (SP2) - AuctionHub</h3>
-<p>An auction website built with JavaScript, Bootstrap and the Noroff API</p>
+<p>A fictional auction website built with JavaScript, Bootstrap and the Noroff API.</p>
 
 [Link to project][github-repo] - [Link to live site][live-site]
 
@@ -49,18 +49,14 @@
 
 ### Description
 
-This is my project for the Semester Project 2 at [Noroff][noroff-url]. The assignment was to create an auction website where users can add items to be bid on and bid on items other users have put up for auction.
+This was my course assignment in the course _Semester Project 2_ at [Noroff][noroff-url]. The assignment was to create a fictional auction website where users can add items to be bid on, and bid on items other users have put up for auction.
 
-The implementation was done using the Auction API, provided from [Noroff][noroff-url].
+The implementation was done using the Noroff Auction API, provided by [Noroff][noroff-url].
 
 ### Built With
 
 <div style="display: inline-block; text-align: center; ">
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/html.svg" alt="html" height="30" width="40"></a>&nbsp;&nbsp;&nbsp;
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/css.svg" alt="css" height="30" width="40"></a>&nbsp;&nbsp;&nbsp;
-<a href="https://getbootstrap.com/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/bootstrap.svg" alt="bootstrap" height="30" width="40"></a>&nbsp;&nbsp;&nbsp;
-<a href="https://https://sass-lang.com/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/sass.svg" alt="bootstrap" height="30" width="40"></a>&nbsp;&nbsp;&nbsp;
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/ProgrammingLanguages/javascript.svg" alt="javascript" height="30" width="40"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/html.svg" alt="html" height="30" width="40"></a> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/css.svg" alt="css" height="30" width="40"></a> <a href="https://getbootstrap.com/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/bootstrap.svg" alt="bootstrap" height="30" width="40"></a> <a href="https://https://sass-lang.com/" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/FrontendDevelopment/sass.svg" alt="sass" height="30" width="40"></a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/ProgrammingLanguages/javascript.svg" alt="javascript" height="30" width="40"></a>
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -69,7 +65,7 @@ The implementation was done using the Auction API, provided from [Noroff][noroff
 
 ## Getting Started
 
-To get a local copy up and running follow these steps.
+To get a local copy up and running follow these steps:
 
 <!-- PREREQUISITES -->
 
@@ -94,7 +90,7 @@ cd replace-with-your-desired-folder
 git init
 ```
 
-3. Clone the repo:
+3. Clone the repo
 
 ```sh
 git clone https://github.com/RiverMichael/SP2-Auction.git
@@ -162,7 +158,7 @@ Please report any issues [here][github-issues] by following this steps:
 
 ## Contact
 
-Michael "River" Nilsson - [mrn@michaelriver.dev][mrn-mail] - [michaelriver.dev][mrn-url]
+Michael (River) Nilsson - [mrn@michaelriver.dev][mrn-mail] | [michaelriver.dev][mrn-url]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -170,7 +166,7 @@ Michael "River" Nilsson - [mrn@michaelriver.dev][mrn-mail] - [michaelriver.dev][
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AACKNOWLEDGMENTS -->
+<!-- ACKNOWLEDGMENTS -->
 
 ## Acknowledgments
 
